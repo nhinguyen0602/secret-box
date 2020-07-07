@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +8,24 @@ import { FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
-  public loginForm: FormGroup;
+  constructor(
+    private fb: FormBuilder
+  ) { }
+
+  loginForm: FormGroup;
   ngOnInit(): void {
+    this.loginForm = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.compose([Validators.required])]
+    });
+  }
+
+  getErrorMessage() {
+    if (this.loginForm.get('email').hasError('required')) {
+      return 'You must enter a value';
+    }
+
+    // return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 
 }

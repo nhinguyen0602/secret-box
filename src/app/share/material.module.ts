@@ -16,42 +16,39 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
+     ReactiveFormsModule,
      CommonModule,
      MatButtonModule,
      MatToolbarModule,
      MatIconModule,
      MatSidenavModule,
-    //  MatBadgeModule,
      MatListModule,
      MatGridListModule,
      MatFormFieldModule,
      MatInputModule,
      MatSelectModule,
-    //  MatRadioModule,
      MatDatepickerModule,
      MatNativeDateModule,
-    //  MatChipsModule,
      MatTooltipModule,
      MatTableModule,
      MatPaginatorModule,
      MatCardModule
   ],
   exports: [
+     ReactiveFormsModule,
      MatButtonModule,
      MatToolbarModule,
      MatIconModule,
      MatSidenavModule,
-    //  MatBadgeModule,
      MatListModule,
      MatGridListModule,
      MatInputModule,
      MatFormFieldModule,
      MatSelectModule,
-    //  MatRadioModule,
      MatDatepickerModule,
-    //  MatChipsModule,
      MatTooltipModule,
      MatTableModule,
      MatPaginatorModule,
