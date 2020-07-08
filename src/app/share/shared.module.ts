@@ -9,6 +9,9 @@ import {RouterModule} from '@angular/router';
     CommonModule,
     AppMaterialModule,
     RouterModule,
+  ],
+  exports: [
+    AppMaterialModule
   ]
 })
 export class SharedModule {

@@ -17,7 +17,6 @@ import { AppMaterialModule } from './share/material.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    AppMaterialModule,
     BrowserAnimationsModule
   ],
   providers: [],
