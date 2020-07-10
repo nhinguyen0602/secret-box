@@ -12,12 +12,12 @@ import { AlertService } from '../service/alert.service';
 import { isArray } from 'util';
 import { CodeError } from '../constant/error-code';
 import { Router } from '@angular/router';
+import { CustomSnackbarService } from '../service/custom-snackbar.service';
 
 @Injectable()
 export class HttpErrorInterceptor implements HttpInterceptor {
   constructor(
-    private alertService: AlertService,
-    private router: Router
+    public snackbarService: CustomSnackbarService,
   ) {
   }
 
@@ -32,13 +32,14 @@ export class HttpErrorInterceptor implements HttpInterceptor {
         if (error.error instanceof ErrorEvent) {
           errorMessage = `Error: ${error.error.message}`;
         } else {
-          status = error.status;
+          status = error.error.error.status;
           if (status === 500) {
             errorMessage = 'Error system';
           } else {
             errorMessage = error.error.error.detail;
           }
         }
+        this.snackbarService.warning(errorMessage, status);
         return throwError(errorMessage);
       })
     );
