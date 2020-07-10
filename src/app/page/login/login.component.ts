@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { AuthService } from 'src/app/service/auth.service';
+import { CustomSnackbarService } from 'src/app/service/custom-snackbar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private snackbarService: CustomSnackbarService,
+    private router: Router
   ) { }
 
   loginForm: FormGroup;
@@ -30,7 +34,13 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.authService.login(this.email.value, this.password.value).subscribe(res => {
-      localStorage.setItem('currentUser', res);
+      if (!res.role){
+        this.snackbarService.warning('Access is not allowed', '403');
+        this.router.navigate(['login']);
+      }
+      else{
+        localStorage.setItem('currentUser', res.id);
+      }
     });
     this.loginForm.reset();
   }
