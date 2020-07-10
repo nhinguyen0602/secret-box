@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
+import { JwtHelperService } from '@auth0/angular-jwt';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +12,7 @@ export class AuthService {
   errorData: {};
   constructor(
     private http: HttpClient,
+    public jwtHelper: JwtHelperService,
   ) { }
 
   login(email: string, password: string) {
@@ -24,6 +26,18 @@ export class AuthService {
       }
     }),
     );
+  }
+
+  isLoggedIn(): boolean {
+    if (localStorage.getItem('currentUser')) {
+      return true;
+    }
+    return false;
+  }
+
+  getAuthentication() {
+    const currentUser = localStorage.getItem('currentUser');
+    return currentUser;
   }
 
 }

@@ -29,46 +29,19 @@ export class HttpErrorInterceptor implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         let errorMessage = '';
         let status = 0;
-        let codeError = 0;
         if (error.error instanceof ErrorEvent) {
-          // client-side error
           errorMessage = `Error: ${error.error.message}`;
         } else {
-
-
-          // server-side error
           status = error.status;
           if (status === 500) {
-            errorMessage = 'Lỗi hệ thống';
+            errorMessage = 'Error system';
           } else {
-            if (isArray(error.error.errors)) {
-              codeError = error.error.errors[0];
-            } else {
-              codeError = error.error.errors;
-            }
+            errorMessage = error.error.error.detail;
           }
-          this.handleCodeError(codeError);
-
         }
         return throwError(errorMessage);
       })
     );
   }
-
-  handleCodeError(codeError: number) {
-    switch (codeError) {
-      case CodeError.TokenInvalid:
-      case CodeError.TokenExpired:
-        this.redirectToLogin();
-        break;
-      default:
-        break;
-    }
-  }
-
-  private redirectToLogin() {
-    this.router.navigateByUrl('/login');
-  }
-
 
 }

@@ -12,11 +12,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   imports: [
      ReactiveFormsModule,
@@ -35,7 +35,8 @@ import { ReactiveFormsModule } from '@angular/forms';
      MatTooltipModule,
      MatTableModule,
      MatPaginatorModule,
-     MatCardModule
+     MatCardModule,
+     MatSnackBarModule
   ],
   exports: [
      ReactiveFormsModule,
@@ -52,7 +53,8 @@ import { ReactiveFormsModule } from '@angular/forms';
      MatTooltipModule,
      MatTableModule,
      MatPaginatorModule,
-     MatCardModule
+     MatCardModule,
+     MatSnackBarModule
   ],
   providers: [
      MatDatepickerModule,

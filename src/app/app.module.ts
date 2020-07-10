@@ -8,11 +8,12 @@ import { LoginComponent } from './page/login/login.component';
 import { SharedModule } from './share/shared.module';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { HttpErrorInterceptor } from './interceptors/error-handler.interceptor';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,9 @@ import { HttpErrorInterceptor } from './interceptors/error-handler.interceptor';
     HttpClientModule,
     ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService
   ],
   bootstrap: [AppComponent]
 })
