@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.authService.login(this.email.value, this.password.value).subscribe(res => {
-      console.log('haha');
+      localStorage.setItem('currentUser', res);
     });
     this.loginForm.reset();
   }
