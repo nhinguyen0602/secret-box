@@ -8,10 +8,6 @@ import {
 import {Observable, throwError, of} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
-import { AlertService } from '../service/alert.service';
-import { isArray } from 'util';
-import { CodeError } from '../constant/error-code';
-import { Router } from '@angular/router';
 import { CustomSnackbarService } from '../service/custom-snackbar.service';
 
 @Injectable()
