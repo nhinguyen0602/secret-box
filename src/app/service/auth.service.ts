@@ -18,6 +18,8 @@ export class AuthService {
     return this.http.post<any>(this.authUrl, {email: email, password: password}, {observe: 'response'})
     .pipe(map(res => {
       if (res.headers.get('Authorization') && res.body) {
+        const headers = new Headers();
+        headers.set('Authorization', res.headers.get('Authorization'));
         return res.body;
       }
     }),
