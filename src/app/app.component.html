@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
     <span>
-        <button mat-raised-button class="mat-primary" (click)="drawer.toggle()" >
+        <button mat-raised-button class="mat-primary" (click)="drawer.toggle()" [disabled] = "isLogin()">
         <mat-icon >menu</mat-icon>
         </button>
     </span>

@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'secret-box';
+  public isLogin(){
+    return !localStorage.getItem('currentUser');
+  }
 }
