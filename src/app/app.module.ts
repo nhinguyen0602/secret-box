@@ -9,13 +9,13 @@ import { SharedModule } from './share/shared.module';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { HttpErrorInterceptor } from './interceptors/error-handler.interceptor';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
-import { SnackBarComponent } from './share/component/snack-bar/snack-bar.component';
+import { UsersComponent } from './page/users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    // SnackBarComponent
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
