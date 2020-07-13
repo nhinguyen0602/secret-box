@@ -1,5 +1,24 @@
 <mat-toolbar color="primary">
-    <span><img alt="logo" class="logo" src="../assets/logo.png"></span>
+    <span>
+        <button mat-raised-button class="mat-primary" (click)="drawer.toggle()" >
+        <mat-icon >menu</mat-icon>
+        </button>
+    </span>
     <span class="fill-remaining-space">SecretBox</span>
 </mat-toolbar>
-<router-outlet></router-outlet>
+<mat-drawer-container class="example-container" >
+    <mat-drawer #drawer class="example-sidenav" mode="side" hasBackdrop="false">
+        <ul>
+            <li><button mat-flat-button>Chức năng 1</button></li>
+            <li><button mat-flat-button>Chức năng 2</button></li>
+            <li><button mat-flat-button>Chức năng 3</button></li>
+        </ul>
+    </mat-drawer>
+    <mat-sidenav-container class="all-wrap">
+        <mat-sidenav-content class="page-wrap">
+            <main class="content">
+                <router-outlet></router-outlet>
+            </main>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</mat-drawer-container>
