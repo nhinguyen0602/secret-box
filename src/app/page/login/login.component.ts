@@ -41,9 +41,9 @@ export class LoginComponent implements OnInit {
       else{
         this.router.navigate(['users']);
         localStorage.setItem('currentUser', res.id);
+        this.loginForm.reset();
       }
     });
-    this.loginForm.reset();
   }
 
 }
