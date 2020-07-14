@@ -20,6 +20,7 @@ export class AuthService {
     return this.http.post<any>(this.authUrl, {email: email, password: password}, {observe: 'response'})
     .pipe(map(res => {
       if (res.headers.get('Authorization') && res.body) {
+        localStorage.setItem('auth', res.headers.get('Authorization'));
         return res.body;
       }
     }),
@@ -27,14 +28,11 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    if (localStorage.getItem('currentUser')) {
-      return true;
-    }
-    return false;
+    return !!localStorage.getItem('auth');
   }
 
   getAuthentication() {
-    const currentUser = localStorage.getItem('currentUser');
+    const currentUser = localStorage.getItem('auth');
     return currentUser;
   }
 

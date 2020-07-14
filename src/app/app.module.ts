@@ -10,6 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { HttpErrorInterceptor } from './interceptors/error-handler.interceptor';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { UsersComponent } from './page/users/users.component';
+import { HttpTokenInterceptor } from './interceptors/http-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { UsersComponent } from './page/users/users.component';
     ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService
   ],
