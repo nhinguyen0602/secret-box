@@ -8,7 +8,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthService {
 
-  private authUrl = environment.apiUrl + `/login`;
+  private authUrl = environment.authUrl;
   errorData: {};
   constructor(
     private http: HttpClient,

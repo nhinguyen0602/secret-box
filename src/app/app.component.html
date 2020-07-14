@@ -5,7 +5,7 @@
 <mat-drawer-container class="example-container" >
     <mat-drawer #drawer class="example-sidenav" [opened]="isLogin()" mode="side" hasBackdrop="false">
         <mat-action-list>
-            <button mat-list-item ><span class="material-icons">supervised_user_circle</span> Chức năng 1 </button>
+            <button mat-list-item routerLink="/users"><span class="material-icons">supervised_user_circle</span> Chức năng 1 </button>
             <button mat-list-item ><span class="material-icons">brightness_7</span> Chức năng 2 </button>
             <button mat-list-item ><span class="material-icons">open_in_browser</span> Chức năng 3 </button>
             <button mat-list-item (click)="logout()"><span class="material-icons">login</span> Logout </button>
