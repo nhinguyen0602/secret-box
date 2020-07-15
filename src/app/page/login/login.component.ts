@@ -3,6 +3,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { AuthService } from 'src/app/service/auth.service';
 import { CustomSnackbarService } from 'src/app/service/custom-snackbar.service';
 import { Router } from '@angular/router';
+import { RoleEnum } from 'src/app/constant/role_enum';
 
 @Component({
   selector: 'app-login',
@@ -34,13 +35,14 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.authService.login(this.email.value, this.password.value).subscribe(res => {
-      if (!res.role){
+      if (!res.body.role || !(res.body.role.name === RoleEnum.Admin) ){
         this.snackbarService.warning('Access is not allowed', '403');
         this.router.navigate(['login']);
       }
       else{
         this.router.navigate(['users']);
-        localStorage.setItem('currentUser', res.id);
+        localStorage.setItem('auth', res.headers.get('Authorization'));
+        localStorage.setItem('currentUser', res.body.id);
         this.loginForm.reset();
       }
     });
