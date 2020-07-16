@@ -11,12 +11,14 @@ import { HttpErrorInterceptor } from './interceptors/error-handler.interceptor';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { UsersComponent } from './page/users/users.component';
 import { HttpTokenInterceptor } from './interceptors/http-token.interceptor';
+import { UserDetailComponent } from './page/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UsersComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,
