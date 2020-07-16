@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   imports: [
      ReactiveFormsModule,
@@ -36,7 +37,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
      MatTableModule,
      MatPaginatorModule,
      MatCardModule,
-     MatSnackBarModule
+     MatSnackBarModule,
+     MatDialogModule
   ],
   exports: [
      ReactiveFormsModule,
@@ -54,7 +56,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
      MatTableModule,
      MatPaginatorModule,
      MatCardModule,
-     MatSnackBarModule
+     MatSnackBarModule,
+     MatDialogModule
   ],
   providers: [
      MatDatepickerModule,

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/share/model/user';
 import { UsersService } from 'src/app/service/users.service';
+import { UserDetailComponent } from '../user-detail/user-detail.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-users',
@@ -10,7 +12,8 @@ import { UsersService } from 'src/app/service/users.service';
 export class UsersComponent implements OnInit {
 
   constructor(
-    private userService: UsersService
+    private userService: UsersService,
+    private dialog: MatDialog
   ) { }
 
   public users: User[];
@@ -24,4 +27,10 @@ export class UsersComponent implements OnInit {
     this.userService.getAllUser().subscribe(users => this.users = users);
   }
 
+  openDialog(id: number) {
+    console.log(id);
+    const dialogRef = this.dialog.open(UserDetailComponent, {
+      data: {name: id}
+    });
+  }
 }
