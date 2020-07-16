@@ -18,6 +18,7 @@ import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatChipsModule} from '@angular/material/chips';
 @NgModule({
   imports: [
      ReactiveFormsModule,
@@ -38,7 +39,8 @@ import {MatDialogModule} from '@angular/material/dialog';
      MatPaginatorModule,
      MatCardModule,
      MatSnackBarModule,
-     MatDialogModule
+     MatDialogModule,
+     MatChipsModule
   ],
   exports: [
      ReactiveFormsModule,
@@ -57,7 +59,8 @@ import {MatDialogModule} from '@angular/material/dialog';
      MatPaginatorModule,
      MatCardModule,
      MatSnackBarModule,
-     MatDialogModule
+     MatDialogModule,
+     MatChipsModule
   ],
   providers: [
      MatDatepickerModule,
