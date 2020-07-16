@@ -22,4 +22,10 @@ export class UsersService {
     );
   }
 
+  getUserDetail(id: number): Observable<User>{
+    return this.http.get<User>(`${this.userUrl}/${id}`).pipe(
+      map(res => res)
+    );
+  }
+
 }
