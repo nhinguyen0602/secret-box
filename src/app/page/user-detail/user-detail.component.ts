@@ -19,5 +19,11 @@ export class UserDetailComponent implements OnInit {
     public user: User;
 
   ngOnInit(): void {
+    this.getUserDetail();
   }
+
+  getUserDetail(){
+    this.userService.getUserDetail(this.data.name).subscribe(user => this.user = user);
+  }
+
 }
