@@ -13,19 +13,21 @@
 }
 
 .material-icons {
-    font-size: 35px;
-    /* margin-bottom: 5px; */
+  font-size: 35px;
+  margin-bottom: 5px;
 }
 
 .column {
   float: left;
-  width: 33.33%;
+  width: 33%;
   padding: 10px;
-  height: 300px; 
+  font-size: 16px;
 }
 
 .row:after {
-  content: "";
   display: table;
   clear: both;
+}
+.font-h3 {
+  color: rgb(5, 133, 144);
 }
