@@ -14,9 +14,18 @@
 
 .material-icons {
     font-size: 35px;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
 }
 
-li {
-    font-size: 17px;
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; 
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }

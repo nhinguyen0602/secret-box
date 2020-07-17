@@ -14,7 +14,7 @@
     top: 120px;
 }
 .mat-card-title{
-    color: #673ab7;
+    color: rgb(5, 133, 144);
     text-align: center;
     margin-left: 150px;
 }
@@ -24,6 +24,6 @@
 }
 button{
     width: 100%;
-    background-color: #673ab7;
+    background-color: rgb(5, 133, 144);
     color: white;
 }
