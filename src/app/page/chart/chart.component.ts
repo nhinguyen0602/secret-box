@@ -15,7 +15,7 @@ export class ChartComponent implements OnInit {
   }
 
   public pieChartLabels: Label[] = [['Used'], ['Rest']];
-  public pieChartData: SingleDataSet = [30, 50];
+  public pieChartData: SingleDataSet = [30, 70];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
   public pieChartPlugins = [];
