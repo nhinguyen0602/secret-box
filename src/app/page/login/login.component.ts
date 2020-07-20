@@ -21,6 +21,9 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   ngOnInit(): void {
+    if (this.authService.isLoggedIn()){
+      this.router.navigate(['users']);
+    }
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.compose([Validators.required])]

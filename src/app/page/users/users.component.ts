@@ -3,6 +3,8 @@ import { User } from 'src/app/share/model/user';
 import { UsersService } from 'src/app/service/users.service';
 import { UserDetailComponent } from '../user-detail/user-detail.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-users',
@@ -13,7 +15,9 @@ export class UsersComponent implements OnInit {
 
   constructor(
     private userService: UsersService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   public users: User[];
@@ -24,7 +28,11 @@ export class UsersComponent implements OnInit {
   }
 
   private getAllUser(){
-    this.userService.getAllUser().subscribe(users => this.users = users);
+    if (this.authService.isLoggedIn()){
+      this.userService.getAllUser().subscribe(users => this.users = users);
+    } else{
+      this.router.navigate(['/login']);
+    }
   }
 
   openDialog(id: number) {
