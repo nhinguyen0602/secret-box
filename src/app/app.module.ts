@@ -12,6 +12,8 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { UsersComponent } from './page/users/users.component';
 import { HttpTokenInterceptor } from './interceptors/http-token.interceptor';
 import { UserDetailComponent } from './page/user-detail/user-detail.component';
+import { ChartsModule } from 'ng2-charts';
+import { ChartComponent } from './page/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { UserDetailComponent } from './page/user-detail/user-detail.component';
     LoginComponent,
     UsersComponent,
     UserDetailComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +29,7 @@ import { UserDetailComponent } from './page/user-detail/user-detail.component';
     SharedModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ChartsModule
     ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
