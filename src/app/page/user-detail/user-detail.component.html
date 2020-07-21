@@ -12,18 +12,18 @@
       <mat-card-subtitle>Email: {{user?.email}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <div class="row">
-          <div class="column" >
-            <h3 class="font-h3">Role </h3>
-            <h3 class="font-h3">Membership level</h3>
-            <h3 class="font-h3">Data Storage</h3>
-          </div>
-          <div class="column" >
-            <h3>{{user?.role.name}}</h3>
-            <h3 *ngIf="user?.membership_level">{{user?.membership_level.member_type}}</h3>
-             <app-chart [used]="25"></app-chart>
-          </div>
+      <div class="row">
+        <div class="column left">
+          <h3 class="font-h3">Role </h3>
+          <h3 class="font-h3">Membership level</h3>
+          <h3 class="font-h3">Data Storage</h3>
         </div>
+        <div class="column right" >
+          <h3 class="custom-info">{{user?.role.name}}</h3>
+          <h3 class="custom-info" *ngIf="user?.membership_level">{{user?.membership_level.member_type}}</h3>
+          <app-chart [used]="25"></app-chart>
+        </div>
+      </div>
     </mat-card-content>
   </mat-card>
 </mat-dialog-content>

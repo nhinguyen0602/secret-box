@@ -19,15 +19,27 @@
 
 .column {
   float: left;
-  width: 33%;
   padding: 10px;
-  font-size: 16px;
+  height: 300px; /* Should be removed. Only for demonstration */
 }
 
+.left{
+  width: 20%;
+}
+
+.right {
+  width: 70%;
+}
+
+/* Clear floats after the columns */
 .row:after {
+  content: "";
   display: table;
   clear: both;
 }
 .font-h3 {
   color: rgb(5, 133, 144);
 }
+ .custom-info {
+  margin-left: 15%;
+ }
