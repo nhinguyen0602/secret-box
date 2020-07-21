@@ -21,7 +21,7 @@
         <div class="column right" >
           <h3 class="custom-info">{{user?.role.name}}</h3>
           <h3 class="custom-info" *ngIf="user?.membership_level">{{user?.membership_level.member_type}}</h3>
-          <app-chart [used]="25"></app-chart>
+          <app-chart [used]="dataUsed"></app-chart>
         </div>
       </div>
     </mat-card-content>
