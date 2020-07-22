@@ -5,6 +5,6 @@
 </button>
 <mat-menu #menu="matMenu">
   <div *ngFor="let ele of membershipLevels">
-    <button mat-menu-item>{{ele.member_type}}</button>
+    <button mat-menu-item (click)="confirmDialog(ele.id)" >{{ele.member_type}}</button>
   </div>
 </mat-menu>

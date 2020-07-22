@@ -24,7 +24,7 @@
     <!-- Weight Column -->
     <ng-container matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef>Update membership </th>
-      <td mat-cell *matCellDef="let element"><app-membership-level></app-membership-level> </td>
+      <td mat-cell *matCellDef="let element"><app-membership-level [userId]="element.id"></app-membership-level> </td>
     </ng-container>
   
     <!-- Symbol Column -->

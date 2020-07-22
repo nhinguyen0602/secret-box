@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { User } from '../share/model/user';
 import { map } from 'rxjs/operators';
 
@@ -11,9 +11,9 @@ import { map } from 'rxjs/operators';
 export class UsersService {
 
   private userUrl = environment.apiUrl + `/users`;
-
+  public changeUsers = new Subject<any>();
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
   ) { }
 
   getAllUser(): Observable<User[]>{
