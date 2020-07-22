@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FileService } from 'src/app/service/file.service';
 import { MembershipLevel } from 'src/app/share/model/membership-level';
 import { MembershipLevelService } from 'src/app/service/membership-level.service';
+import { UsersService } from 'src/app/service/users.service';
 
 @Component({
   selector: 'app-membership-level',
@@ -14,7 +14,8 @@ export class MembershipLevelComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private membershipLevelService: MembershipLevelService
+    private membershipLevelService: MembershipLevelService,
+    private userService: UsersService
   ) { }
 
   public favoriteSeason: string;
