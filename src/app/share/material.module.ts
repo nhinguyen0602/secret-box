@@ -19,6 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
 @NgModule({
   imports: [
      ReactiveFormsModule,
@@ -40,7 +42,9 @@ import {MatChipsModule} from '@angular/material/chips';
      MatCardModule,
      MatSnackBarModule,
      MatDialogModule,
-     MatChipsModule
+     MatChipsModule,
+     MatCheckboxModule,
+     MatRadioModule
   ],
   exports: [
      ReactiveFormsModule,
@@ -60,10 +64,16 @@ import {MatChipsModule} from '@angular/material/chips';
      MatCardModule,
      MatSnackBarModule,
      MatDialogModule,
-     MatChipsModule
+     MatChipsModule,
+     MatCheckboxModule,
+     MatRadioModule
   ],
   providers: [
      MatDatepickerModule,
+     {
+      provide: MAT_RADIO_DEFAULT_OPTIONS,
+      useValue: { color: 'primary' },
+  }
   ]
 })
 export class AppMaterialModule {}

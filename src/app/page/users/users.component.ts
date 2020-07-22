@@ -5,6 +5,7 @@ import { UserDetailComponent } from '../user-detail/user-detail.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
+import { MembershipLevelComponent } from '../membership-level/membership-level.component';
 
 @Component({
   selector: 'app-users',
@@ -35,8 +36,14 @@ export class UsersComponent implements OnInit {
     }
   }
 
-  openDialog(id: number) {
+  openDialogUserDetail(id: number) {
     const dialogRef = this.dialog.open(UserDetailComponent, {
+      data: {name: id}
+    });
+  }
+
+  openDialogMembership(id: number) {
+    const dialogRef = this.dialog.open(MembershipLevelComponent, {
       data: {name: id}
     });
   }
