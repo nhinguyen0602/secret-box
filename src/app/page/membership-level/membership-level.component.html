@@ -1,11 +1,10 @@
-<mat-dialog-content>
-  <label id="example-radio-group-label">Update membership level</label>
-<mat-radio-group
-  aria-labelledby="example-radio-group-label"
-  class="example-radio-group">
-  <mat-radio-button class="example-radio-button" *ngFor="let ele of membershipLevels"
-    [value]="ele.member_type">
-    {{ele.member_type}}
-  </mat-radio-button>
-</mat-radio-group>
-</mat-dialog-content>
+<button mat-button [matMenuTriggerFor]="menu">
+  <span class="material-icons"
+  >upgrade
+  </span>
+</button>
+<mat-menu #menu="matMenu">
+  <div *ngFor="let ele of membershipLevels">
+    <button mat-menu-item>{{ele.member_type}}</button>
+  </div>
+</mat-menu>

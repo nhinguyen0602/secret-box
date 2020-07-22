@@ -21,6 +21,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
+import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   imports: [
      ReactiveFormsModule,
@@ -44,7 +45,8 @@ import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio
      MatDialogModule,
      MatChipsModule,
      MatCheckboxModule,
-     MatRadioModule
+     MatRadioModule,
+     MatMenuModule
   ],
   exports: [
      ReactiveFormsModule,
@@ -66,7 +68,8 @@ import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio
      MatDialogModule,
      MatChipsModule,
      MatCheckboxModule,
-     MatRadioModule
+     MatRadioModule,
+     MatMenuModule
   ],
   providers: [
      MatDatepickerModule,

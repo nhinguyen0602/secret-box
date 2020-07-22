@@ -12,8 +12,6 @@ import { UsersService } from 'src/app/service/users.service';
 export class MembershipLevelComponent implements OnInit {
 
   constructor(
-    public dialog: MatDialog,
-    @Inject(MAT_DIALOG_DATA) public data: any,
     private membershipLevelService: MembershipLevelService,
     private userService: UsersService
   ) { }

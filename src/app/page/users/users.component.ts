@@ -41,10 +41,4 @@ export class UsersComponent implements OnInit {
       data: {name: id}
     });
   }
-
-  openDialogMembership(id: number) {
-    const dialogRef = this.dialog.open(MembershipLevelComponent, {
-      data: {name: id}
-    });
-  }
 }
