@@ -4,6 +4,7 @@ import { MembershipLevel } from 'src/app/share/model/membership-level';
 import { MembershipLevelService } from 'src/app/service/membership-level.service';
 import { UsersService } from 'src/app/service/users.service';
 import { ConfirmDialogModel, ConfirmDialogComponent } from '../../component/confirm-dialog/confirm-dialog.component';
+import { User } from 'src/app/share/model/user';
 
 @Component({
   selector: 'app-membership-level',
@@ -12,7 +13,7 @@ import { ConfirmDialogModel, ConfirmDialogComponent } from '../../component/conf
 })
 export class MembershipLevelComponent implements OnInit {
 
-  @Input() userId: number;
+  @Input() user: User;
 
   constructor(
     private membershipLevelService: MembershipLevelService,
@@ -35,7 +36,7 @@ export class MembershipLevelComponent implements OnInit {
   confirmDialog(idMembership: number): void {
     const message = `Are you sure you want to do this?`;
 
-    const dialogData = new ConfirmDialogModel(idMembership, this.userId);
+    const dialogData = new ConfirmDialogModel(idMembership, this.user);
 
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       maxWidth: '400px',

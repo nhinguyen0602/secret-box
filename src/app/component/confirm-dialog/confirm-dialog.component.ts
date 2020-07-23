@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UsersService } from 'src/app/service/users.service';
+import { User } from 'src/app/share/model/user';
 
 @Component({
   selector: 'app-confirm-dialog',
@@ -9,23 +10,24 @@ import { UsersService } from 'src/app/service/users.service';
 })
 export class ConfirmDialogComponent implements OnInit {
 
-  message = 'Are you sure you want to do this?';
+  message: string;
   private idMember: number;
-  private idUser: number;
+  private user: User;
 
   constructor(
     public dialogRef: MatDialogRef<ConfirmDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ConfirmDialogModel,
     private userService: UsersService) {
     this.idMember = data.idMembership;
-    this.idUser = data. idUser;
+    this.user = data.user;
+    this.message = `Are you want update membership level of ${this.user.email} ?`;
   }
 
   ngOnInit() {
   }
 
   onConfirm(): void {
-    this.userService.updateMembershipLevel(this.idUser, this.idMember).subscribe();
+    this.userService.updateMembershipLevel(this.user.id, this.idMember).subscribe();
     this.dialogRef.close(true);
   }
 
@@ -35,6 +37,6 @@ export class ConfirmDialogComponent implements OnInit {
 
 }
 export class ConfirmDialogModel {
-  constructor(public idMembership: number, public idUser: number) {
+  constructor(public idMembership: number, public user: User) {
   }
 }
