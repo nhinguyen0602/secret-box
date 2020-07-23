@@ -35,7 +35,6 @@ export class ConfirmDialogComponent implements OnInit {
 
 }
 export class ConfirmDialogModel {
-
   constructor(public idMembership: number, public idUser: number) {
   }
 }

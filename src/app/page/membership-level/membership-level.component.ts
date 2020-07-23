@@ -1,9 +1,9 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, OnInit, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MembershipLevel } from 'src/app/share/model/membership-level';
 import { MembershipLevelService } from 'src/app/service/membership-level.service';
 import { UsersService } from 'src/app/service/users.service';
-import { ConfirmDialogModel, ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogModel, ConfirmDialogComponent } from '../../component/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-membership-level',
