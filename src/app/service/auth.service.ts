@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +14,7 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     public jwtHelper: JwtHelperService,
+    private router: Router
   ) { }
 
   login(email: string, password: string) {
@@ -35,4 +37,8 @@ export class AuthService {
     return currentUser;
   }
 
+  public logout(){
+    localStorage.clear();
+    this.router.navigate([`login`]);
+  }
 }
