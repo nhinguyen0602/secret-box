@@ -23,20 +23,16 @@ export class UserDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserDetail();
-    this.getFileOfUser();
+    this.getDataUsedOfUser();
   }
 
   getUserDetail(){
     this.userService.getUserDetail(this.data.name).subscribe(user => this.user = user);
   }
 
-  getFileOfUser(){
-    this.fileService.getFileOfUser(this.data.name).subscribe(files => {
-      let rs = 0;
-      for (const val of files) {
-        rs += val.size;
-    }
-      this.dataUsed = rs / 1000 / this.user.membership_level.limit_storage_gigabytes * 100;
+  getDataUsedOfUser(){
+    this.fileService.getFileOfUser(this.data.name).subscribe(dataUsed => {
+      this.dataUsed =  dataUsed / 1000 / this.user.membership_level.limit_storage_gigabytes * 100;
     });
   }
 

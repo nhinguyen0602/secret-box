@@ -14,8 +14,8 @@ export class FileService {
     private http: HttpClient
   ) { }
 
-  getFileOfUser(userId: number): Observable<File[]>{
-    return this.http.get<File[]>(`${this.url}/${userId}/files`).pipe(
+  getFileOfUser(userId: number): Observable<number>{
+    return this.http.get<number>(`${this.url}/${userId}/files`).pipe(
       map(res => res)
     );
   }
