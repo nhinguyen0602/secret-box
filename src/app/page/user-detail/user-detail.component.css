@@ -1,13 +1,13 @@
 .mat-dialog-content {
-    width: 700px;
-    height: 500px;
+  width: 700px;
+  height: 500px;
 }
-.example-card {
-    width: 95%;
-    height: 90%;
+.card {
+  width: 95%;
+  height: 90%;
 }
 
-.example-header-image {
+.header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
 }
