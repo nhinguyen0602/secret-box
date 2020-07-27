@@ -24,8 +24,7 @@
   width: 100%;
 }
 
-footer {
-  width: 100%;
+app-footer {
   padding: 20px 0;
   text-align: center;
 }

@@ -17,6 +17,7 @@ import { MembershipLevelComponent } from './page/membership-level/membership-lev
 import { ChartComponent } from './component/chart/chart.component';
 import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
 import { SidenavComponent } from './component/sidenav/sidenav.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SidenavComponent } from './component/sidenav/sidenav.component';
     MembershipLevelComponent,
     ConfirmDialogComponent,
     SidenavComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
