@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         this.snackbarService.warning('Access is not allowed', '403');
         this.router.navigate(['login']);
       }
-      else{
+      else {
         this.router.navigate(['users']);
         localStorage.setItem('auth', res.headers.get('Authorization'));
         localStorage.setItem('currentUser', res.body.id);

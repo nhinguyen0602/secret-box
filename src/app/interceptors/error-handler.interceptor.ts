@@ -30,7 +30,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
         } else {
           status = error.error.error.status;
           if (status === 500) {
-            errorMessage = 'Error system';
+            errorMessage = 'System Error';
           } else {
             errorMessage = error.error.error.detail;
           }

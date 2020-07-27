@@ -1,11 +1,11 @@
-.mat-form-field{
+.mat-form-field {
     width: 300px;
 }
-.login-wrapper{
+.login-wrapper {
     text-align: center;
     display: block;
 }
-.mat-card{
+.mat-card {
     width: 400px;
     text-align: center;
 }
@@ -13,16 +13,16 @@
     margin: 0 auto;
     top: 120px;
 }
-.mat-card-title{
+.mat-card-title {
     color: rgb(5, 133, 144);
     text-align: center;
     margin-left: 150px;
 }
-.example-full-width{
+.example-full-width {
     color: black;
     width: 100%;
 }
-button{
+button {
     width: 100%;
     background-color: rgb(5, 133, 144);
     color: white;
