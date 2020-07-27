@@ -18,7 +18,7 @@ import { ChartComponent } from './component/chart/chart.component';
 import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
 import { SidenavComponent } from './component/sidenav/sidenav.component';
 import { FooterComponent } from './component/footer/footer.component';
-
+import { ButtonComponent } from './component/button/button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +30,7 @@ import { FooterComponent } from './component/footer/footer.component';
     ConfirmDialogComponent,
     SidenavComponent,
     FooterComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
