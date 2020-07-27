@@ -16,6 +16,7 @@ import { ChartsModule } from 'ng2-charts';
 import { MembershipLevelComponent } from './page/membership-level/membership-level.component';
 import { ChartComponent } from './component/chart/chart.component';
 import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
+import { SidenavComponent } from './component/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialo
     ChartComponent,
     MembershipLevelComponent,
     ConfirmDialogComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,6 @@ export class AppComponent {
   title = 'secret-box';
 
   constructor(
-    private router: Router,
     private authService: AuthService
   ){}
 
@@ -19,7 +18,4 @@ export class AppComponent {
     return this.authService.isLoggedIn();
   }
 
-  public logout(){
-    this.authService.logout();
-  }
 }
