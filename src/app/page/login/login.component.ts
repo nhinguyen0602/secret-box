@@ -38,16 +38,10 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.authService.login(this.email.value, this.password.value).subscribe(res => {
-      if (!res.body.role || !(res.body.role.name === RoleEnum.Admin) ){
-        this.snackbarService.warning('Access is not allowed', '403');
-        this.router.navigate(['login']);
-      }
-      else {
-        this.router.navigate(['users']);
-        localStorage.setItem('auth', res.headers.get('Authorization'));
-        localStorage.setItem('currentUser', res.body.id);
-        this.loginForm.reset();
-      }
+      localStorage.setItem('auth', res.headers.get('Authorization'));
+      localStorage.setItem('currentUser', res.body.id);
+      this.router.navigate(['users']);
+      this.loginForm.reset();
     });
   }
 
