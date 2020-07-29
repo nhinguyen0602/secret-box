@@ -1,7 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { UsersService } from 'src/app/service/users.service';
-import { User } from 'src/app/share/model/user';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-confirm-dialog',
@@ -10,33 +8,21 @@ import { User } from 'src/app/share/model/user';
 })
 export class ConfirmDialogComponent implements OnInit {
 
-  message: string;
-  private idMember: number;
-  private user: User;
-
+  @Input() message: string;
+  // tslint:disable-next-line:no-output-native
+  @Output() public submit = new EventEmitter();
   constructor(
-    public dialogRef: MatDialogRef<ConfirmDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: ConfirmDialogModel,
-    private userService: UsersService) {
-    this.idMember = data.idMembership;
-    this.user = data.user;
-    this.message = `Are you want update membership level of ${this.user.email} ?`;
-  }
+    public dialogRef: MatDialogRef<ConfirmDialogComponent>
+  ) {}
 
   ngOnInit() {
-  }
-
-  onConfirm(): void {
-    this.userService.updateMembershipLevel(this.user.id, this.idMember).subscribe();
-    this.dialogRef.close(true);
   }
 
   onDismiss(): void {
     this.dialogRef.close(false);
   }
 
-}
-export class ConfirmDialogModel {
-  constructor(public idMembership: number, public user: User) {
+  public onConfirm(){
+    this.submit.emit();
   }
 }

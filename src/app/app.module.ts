@@ -19,6 +19,7 @@ import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialo
 import { SidenavComponent } from './component/sidenav/sidenav.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { ButtonComponent } from './component/button/button.component';
+import { ConfirmUpdateMembershipComponent } from './page/confirm-update-membership/confirm-update-membership.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { ButtonComponent } from './component/button/button.component';
     SidenavComponent,
     FooterComponent,
     ButtonComponent,
+    ConfirmUpdateMembershipComponent,
   ],
   imports: [
     BrowserModule,

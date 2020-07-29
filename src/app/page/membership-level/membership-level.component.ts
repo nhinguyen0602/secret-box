@@ -3,8 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MembershipLevel } from 'src/app/share/model/membership-level';
 import { MembershipLevelService } from 'src/app/service/membership-level.service';
 import { UsersService } from 'src/app/service/users.service';
-import { ConfirmDialogModel, ConfirmDialogComponent } from '../../component/confirm-dialog/confirm-dialog.component';
 import { User } from 'src/app/share/model/user';
+import { ConfirmUpdateMembershipComponent, MembershipDialogModel } from '../confirm-update-membership/confirm-update-membership.component';
 
 @Component({
   selector: 'app-membership-level',
@@ -34,11 +34,10 @@ export class MembershipLevelComponent implements OnInit {
   }
 
   confirmDialog(idMembership: number): void {
-    const message = `Are you sure you want to do this?`;
 
-    const dialogData = new ConfirmDialogModel(idMembership, this.user);
+    const dialogData = new MembershipDialogModel(idMembership, this.user);
 
-    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+    const dialogRef = this.dialog.open(ConfirmUpdateMembershipComponent, {
       maxWidth: '400px',
       data: dialogData
     });
