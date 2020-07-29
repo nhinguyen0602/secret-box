@@ -8,6 +8,7 @@ export class User {
     role: Role;
     // tslint:disable-next-line:variable-name
     membership_level: MembershipLevel;
-    files: FileItem[];
+    // tslint:disable-next-line:variable-name
+    total_size_files: number;
     folders: FileItem[];
 }
