@@ -14,16 +14,16 @@
   top: 120px;
 }
 .mat-card-title{
-  color: rgb(5, 133, 144);
+  color: var(--primary-color);
   text-align: center;
   margin-left: 150px;
 }
-.example-full-width{
-  color: black;
+.classfull-width{
+  color: var(--black-color);
   width: 100%;
 }
 button{
   width: 100%;
-  background-color: rgb(5, 133, 144);
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white-color);
 }

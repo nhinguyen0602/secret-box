@@ -38,7 +38,7 @@
   clear: both;
 }
 .font-h3 {
-  color: rgb(5, 133, 144);
+  color: var(--primary-color);
 }
  .custom-info {
   margin-left: 15%;

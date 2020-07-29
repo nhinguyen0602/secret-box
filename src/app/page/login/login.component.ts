@@ -3,7 +3,6 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { AuthService } from 'src/app/service/auth.service';
 import { CustomSnackbarService } from 'src/app/service/custom-snackbar.service';
 import { Router } from '@angular/router';
-import { RoleEnum } from 'src/app/role_enum';
 
 @Component({
   selector: 'app-login',
