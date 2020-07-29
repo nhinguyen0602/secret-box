@@ -20,6 +20,7 @@ import { SidenavComponent } from './component/sidenav/sidenav.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { ButtonComponent } from './component/button/button.component';
 import { ConfirmUpdateMembershipComponent } from './page/confirm-update-membership/confirm-update-membership.component';
+import { TransactionComponent } from './page/transaction/transaction.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { ConfirmUpdateMembershipComponent } from './page/confirm-update-membersh
     FooterComponent,
     ButtonComponent,
     ConfirmUpdateMembershipComponent,
+    TransactionComponent,
   ],
   imports: [
     BrowserModule,
