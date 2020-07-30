@@ -36,6 +36,11 @@ import { SharedModule } from './share/shared.module';
     ConfirmUpdateMembershipComponent,
     TransactionComponent,
   ],
+  entryComponents: [
+    ConfirmUpdateMembershipComponent,
+    ConfirmDialogComponent,
+    UserDetailComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
