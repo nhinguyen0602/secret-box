@@ -1,11 +1,11 @@
-export class FileItem{
-    id: number;
-    name: string;
-    size: number;
+export class FileItem {
+    public id: number;
+    public name: string;
+    public size: number;
     // tslint:disable-next-line:variable-name
-    is_folder: boolean;
+    public is_folder: boolean;
     // tslint:disable-next-line:variable-name
-    parent_folder_id: number;
+    public parent_folder_id: number;
     // tslint:disable-next-line:variable-name
-    is_uploaded: boolean;
+    public is_uploaded: boolean;
 }

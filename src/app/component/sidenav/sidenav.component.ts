@@ -4,22 +4,23 @@ import { AuthService } from 'src/app/service/auth.service';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css']
+  // tslint:disable-next-line:object-literal-sort-keys
+  styleUrls: ['./sidenav.component.css'],
 })
 export class SidenavComponent implements OnInit {
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
   ) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
-  public isLogin(){
+  public isLogin() {
     return this.authService.isLoggedIn();
   }
 
-  public logout(){
+  public logout() {
     this.authService.logout();
   }
 

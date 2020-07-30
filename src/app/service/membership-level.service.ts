@@ -1,23 +1,23 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { MembershipLevel } from '../share/model/membership-level';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+import { MembershipLevel } from '../share/model/membership-level';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MembershipLevelService {
 
-  private url = environment.apiUrl + `/membership_levels`;
+  public url = environment.apiUrl + `/membership_levels`;
   constructor(
-    private http: HttpClient
+    public http: HttpClient,
   ) { }
 
-  getAllMembershipLevel(): Observable<MembershipLevel[]>{
+  public getAllMembershipLevel(): Observable<MembershipLevel[]> {
     return this.http.get<MembershipLevel[]>(this.url).pipe(
-      map(res => res)
+      map((res) => res),
     );
   }
 
