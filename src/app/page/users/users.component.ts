@@ -21,7 +21,7 @@ export class UsersComponent implements OnInit {
   ) { }
 
   public users: User[];
-  displayedColumns: string[] = ['id', 'email', 'member', 'edit', 'delete'];
+  displayedColumns: string[] = ['id', 'email', 'member', 'edit'];
 
   ngOnInit(): void {
     this.getAllUser();
