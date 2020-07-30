@@ -13,10 +13,10 @@ const forceSSL = function () {
     next();
   }
 };
-app.use(express.static('./dist/{{your-app-name}}'));
+app.use(express.static('/dist/secret-box'));
  
 app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname,'/dist/{{your-app-name}}/index.html'));
+  res.sendFile(path.join('app','/dist/secret-box/index.html'));
 });
  
 app.use(forceSSL());
