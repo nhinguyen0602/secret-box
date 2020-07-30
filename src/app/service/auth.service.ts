@@ -1,26 +1,25 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { map } from 'rxjs/operators';
-import { JwtHelperService } from '@auth0/angular-jwt';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
 
-  private authUrl = environment.apiUrl + `/login`;
-  errorData: {};
+  public authUrl = environment.apiUrl + `/login`;
   constructor(
-    private http: HttpClient,
+    public http: HttpClient,
     public jwtHelper: JwtHelperService,
-    private router: Router
+    public router: Router,
   ) { }
 
-  login(email: string, password: string) {
+  public login(email: string, password: string) {
     // tslint:disable-next-line:object-literal-shorthand
     return this.http.post<any>(this.authUrl, {email: email, password: password}, {observe: 'response'})
-    .pipe(map(res => {
+    .pipe(map((res) => {
       if (res.headers.get('Authorization') && res.body) {
         return res;
       }
@@ -28,16 +27,16 @@ export class AuthService {
     );
   }
 
-  isLoggedIn(): boolean {
+  public isLoggedIn(): boolean {
     return !!localStorage.getItem('auth');
   }
 
-  getAuthentication() {
+  public getAuthentication() {
     const currentUser = localStorage.getItem('auth');
     return currentUser;
   }
 
-  public logout(){
+  public logout() {
     localStorage.clear();
     this.router.navigate([`login`]);
   }

@@ -1,14 +1,15 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { ChartOptions, ChartType } from 'chart.js';
-import { SingleDataSet, Label, monkeyPatchChartJsTooltip, monkeyPatchChartJsLegend } from 'ng2-charts';
+import { Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, SingleDataSet } from 'ng2-charts';
 
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.css']
+  // tslint:disable-next-line:object-literal-sort-keys
+  styleUrls: ['./chart.component.css'],
 })
 export class ChartComponent implements OnChanges {
-  @Input() used: number;
+  @Input()public used: number;
 
   constructor() {
     monkeyPatchChartJsTooltip();
@@ -25,7 +26,7 @@ export class ChartComponent implements OnChanges {
     responsive: true,
   };
 
-  ngOnChanges(){
+  public ngOnChanges() {
     this.pieChartData = [this.used, 100 - this.used];
   }
 

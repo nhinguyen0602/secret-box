@@ -1,20 +1,20 @@
 import { User } from './user';
 
 export class Transaction {
-  id: number;
+  public id: number;
   // tslint:disable-next-line:variable-name
-  price_amount_micros: string;
+  public price_amount_micros: string;
   // tslint:disable-next-line:variable-name
-  price_currency_code: string;
+  public price_currency_code: string;
   // tslint:disable-next-line:variable-name
-  created_at: Date;
+  public created_at: Date;
   // tslint:disable-next-line:variable-name
-  subscription_purchase: ProductDetail;
+  public subscription_purchase: ProductDetail;
 }
 export class ProductDetail {
-  id: number;
+  public id: number;
   // tslint:disable-next-line:variable-name
-  product_id: string;
+  public product_id: string;
   // tslint:disable-next-line:variable-name
-  user_detail: User;
+  public user_detail: User;
 }

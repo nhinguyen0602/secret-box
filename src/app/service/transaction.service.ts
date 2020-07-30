@@ -1,24 +1,24 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Transaction } from '../share/model/transaction';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+import { Transaction } from '../share/model/transaction';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TransactionService {
 
-  private transactionUrl = environment.apiUrl + `/transactions`;
+  public transactionUrl = environment.apiUrl + `/transactions`;
 
   constructor(
-    private http: HttpClient
+    public http: HttpClient,
   ) { }
 
-  getAllTransaction(): Observable<Transaction[]>{
+  public getAllTransaction(): Observable<Transaction[]> {
     return this.http.get<Transaction[]>(this.transactionUrl).pipe(
-      map(res => res)
+      map((res) => res),
     );
   }
 
