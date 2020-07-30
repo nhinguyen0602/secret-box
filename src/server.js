@@ -16,7 +16,7 @@ const forceSSL = function () {
 app.use(express.static('/dist/secret-box'));
  
 app.get('/*', function (req, res) {
-  res.sendFile(path.join('app','/dist/secret-box/index.html'));
+  res.sendFile(path.join(__dirname,'/dist/secret-box/index.html'));
 });
  
 app.use(forceSSL());
