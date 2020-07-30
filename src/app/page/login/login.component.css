@@ -1,0 +1,29 @@
+.mat-form-field {
+  width: 300px;
+}
+.login-wrapper {
+  text-align: center;
+  display: block;
+}
+.mat-card {
+  width: 400px;
+  text-align: center;
+}
+.card-login-form {
+  margin: 0 auto;
+  top: 120px;
+}
+.mat-card-title {
+  color: var(--primary-color);
+  text-align: center;
+  margin-left: 150px;
+}
+.classfull-width {
+  color: var(--black-color);
+  width: 100%;
+}
+button {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
