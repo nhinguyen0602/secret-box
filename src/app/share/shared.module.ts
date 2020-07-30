@@ -7,6 +7,9 @@ import {AppMaterialModule} from './material.module';
   declarations: [
     SnackBarComponent,
   ],
+  entryComponents: [
+    SnackBarComponent,
+  ],
   imports: [
     CommonModule,
     AppMaterialModule,
