@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
+import {LoadingBarHttpClientModule} from '@ngx-loading-bar/http-client';
 import { ChartsModule } from 'ng2-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,6 +49,7 @@ import { SharedModule } from './share/shared.module';
     BrowserAnimationsModule,
     HttpClientModule,
     ChartsModule,
+    LoadingBarHttpClientModule,
     ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },

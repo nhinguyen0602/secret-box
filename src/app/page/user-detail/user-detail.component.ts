@@ -19,6 +19,7 @@ export class UserDetailComponent implements OnInit {
 
     public user: User;
     public dataUsed: number;
+    public isLoading = true;
 
   public ngOnInit(): void {
     this.getUserDetail();
@@ -28,6 +29,7 @@ export class UserDetailComponent implements OnInit {
     this.userService.getUserDetail(this.data.name).subscribe((user) => {
       this.user = user;
       this.dataUsed = user.total_size_files / 1000 / this.user.membership_level.limit_storage_gigabytes * 100;
+      this.isLoading = false;
     });
   }
 

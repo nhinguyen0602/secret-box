@@ -73,7 +73,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "^5.4.2",
+    "protractor": "^5.4.4",
     "shipit-cli": "^5.1.0",
     "shipit-deploy": "^5.1.0",
     "ts-node": "~7.0.0",

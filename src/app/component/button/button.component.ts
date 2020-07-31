@@ -1,19 +1,20 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.css']
+  // tslint:disable-next-line:object-literal-sort-keys
+  styleUrls: ['./button.component.css'],
 })
 export class ButtonComponent implements OnInit {
 
-  @Input() title: string;
-  @Input() routerLink: string;
-  @Input() icon: string;
+  @Input() public title: string;
+  @Input() public routerLink: string;
+  @Input() public icon: string;
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 }
