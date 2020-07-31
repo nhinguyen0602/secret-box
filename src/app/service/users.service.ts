@@ -28,8 +28,8 @@ export class UsersService {
     );
   }
 
-  public updateMembershipLevel(idUser: number, idlevel: number): Observable<boolean> {
-    return this.http.put<boolean>(`${this.userUrl}/${idUser}?membership_level=${idlevel}`, null).pipe(
+  public updateMembershipLevel(idUser: number, idlevel: number): Observable<User> {
+    return this.http.put<User>(`${this.userUrl}/${idUser}?membership_level=${idlevel}`, null).pipe(
       map((res) => res),
     );
   }

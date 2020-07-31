@@ -5,6 +5,8 @@
   </mat-toolbar>
   </p>
 <mat-dialog-content class="mat-typography">
+  <mat-spinner class="spinner" *ngIf="isLoading; else userdetail"></mat-spinner>
+  <ng-template #userdetail>
   <mat-card class="card">
     <mat-card-header>
       <div mat-card-avatar class="header-image"></div>
@@ -26,6 +28,7 @@
       </div>
     </mat-card-content>
   </mat-card>
+</ng-template>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
