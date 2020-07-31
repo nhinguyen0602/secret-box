@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  apiUrl : 'http://localhost:3000/admin',
+  apiUrl : 'https://stark-headland-89728.herokuapp.com/admin',
   production: false,
 };
 
