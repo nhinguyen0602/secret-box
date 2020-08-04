@@ -29,6 +29,6 @@ app-footer {
   text-align: center;
 }
 
-mat-sidenav {
-  width: 260px;
+.mat-sidenav {
+  width: 200px;
 }
