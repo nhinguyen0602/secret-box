@@ -5,5 +5,12 @@ table {
 
 .pagination {
 	float: right;
-	margin-right: 40px;
+	margin-right: 50px;
+}
+
+.h5, .fa {
+  color: var(--primary-color);
+}
+.fa-exchange {
+  font-size: 25px;
 }

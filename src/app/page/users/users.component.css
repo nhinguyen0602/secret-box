@@ -2,3 +2,16 @@ table {
   width: 90%;
   margin-left: 5%;
 }
+
+.pagination {
+  float: right;
+  margin-right: 50px;
+}
+
+.h5, .fa {
+  color: var(--primary-color);
+}
+
+.fa-user-circle {
+  font-size: 30px;
+}
