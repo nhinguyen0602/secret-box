@@ -7,15 +7,12 @@
 
     <mat-sidenav-content class="page-wrap">
       <main class="content">
-        <button mat-button (click)="drawer.toggle()"*ngIf="isLogin()">
-            <span class="material-icons">menu</span>
-        </button>
         <router-outlet></router-outlet>
       </main>
       <app-footer></app-footer>
     </mat-sidenav-content>
   
-    <mat-sidenav #drawer [opened]="isLogin()" mode="over">
+    <mat-sidenav #drawer [opened]="isLogin()" mode="side">
       <app-sidenav></app-sidenav>
     </mat-sidenav>
   

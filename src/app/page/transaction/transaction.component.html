@@ -1,92 +1,29 @@
-<!-- <table mat-table [dataSource]="transactions" class="mat-elevation-z8">
-
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="user">
-      <th mat-header-cell *matHeaderCellDef> User </th>
-      <td mat-cell *matCellDef="let element"> {{element.subscription_purchase.user_detail.email}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="price">
-      <th mat-header-cell *matHeaderCellDef> Price </th>
-      <td mat-cell *matCellDef="let element"> {{element.price_amount_micros}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="price_code">
-      <th mat-header-cell *matHeaderCellDef> Price Currency Code </th>
-      <td mat-cell *matCellDef="let element"> {{element.price_currency_code}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="created_at">
-        <th mat-header-cell *matHeaderCellDef> Date </th>
-        <td mat-cell *matCellDef="let element"> {{element.created_at | date}} </td>
-      </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    
-  </table>
-   -->
-
-   <div class="col-lg-12">
-    <div class="card">
-      <div class="card-header">
-        <i class="fa fa-align-justify"></i> Striped Table
-      </div>
-      <div class="card-body">
-        <table class="table table-striped">
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> Transactions
+        </div>
+        <div class="card-body">
+          <table class="table">
           <thead>
             <tr>
-              <th>Username</th>
-              <th>Date registered</th>
-              <th>Role</th>
-              <th>Status</th>
+              <th>No</th>
+              <th>User</th>
+              <th>Price</th>
+              <th>Price Code</th>
+              <th>Created At</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>Yiorgos Avraamu</td>
-              <td>2012/01/01</td>
-              <td>Member</td>
-              <td>
-                <span class="badge badge-success">Active</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Avram Tarasios</td>
-              <td>2012/02/01</td>
-              <td>Staff</td>
-              <td>
-                <span class="badge badge-danger">Banned</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Quintin Ed</td>
-              <td>2012/02/01</td>
-              <td>Admin</td>
-              <td>
-                <span class="badge badge-secondary">Inactive</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Enéas Kwadwo</td>
-              <td>2012/03/01</td>
-              <td>Member</td>
-              <td>
-                <span class="badge badge-warning">Pending</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Agapetus Tadeáš</td>
-              <td>2012/01/21</td>
-              <td>Staff</td>
-              <td>
-                <span class="badge badge-success">Active</span>
-              </td>
-            </tr>
+          <tbody *ngFor="let transaction of transactions">
+              <tr>
+                <td> {{transaction.id}} </td>
+                <td> {{transaction.subscription_purchase.user_detail.email}} </td>
+                <td> {{transaction.price_amount_micros}} </td>
+                <td> {{transaction.price_currency_code}} </td>
+                <td> {{transaction.created_at | date }} </td>
+              </tr>
           </tbody>
         </table>
         <ul class="pagination">

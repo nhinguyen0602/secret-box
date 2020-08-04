@@ -2,3 +2,8 @@ table {
 	width: 90%;
 	margin-left: 5%;
 }
+
+.pagination {
+	float: right;
+	margin-right: 40px;
+}
