@@ -7,27 +7,40 @@
 <mat-dialog-content class="mat-typography">
   <mat-spinner class="spinner" *ngIf="isLoading; else userdetail"></mat-spinner>
   <ng-template #userdetail>
-  <mat-card class="card">
-    <mat-card-header>
-      <div mat-card-avatar class="header-image"></div>
-      <mat-card-title>{{user?.email.split('@')[0]}}</mat-card-title>
-      <mat-card-subtitle>Email: {{user?.email}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="row">
-        <div class="column left">
-          <h3 class="font-h3">Role </h3>
-          <h3 class="font-h3">Membership level</h3>
-          <h3 class="font-h3">Data Storage</h3>
+  <div class="col-md-12">
+    <tabset>
+      <tab>
+        <ng-template tabHeading><i class="fa fa-info-circle"></i> Information</ng-template>
+        <div class="row" class="class-format">
+          <div class="column left">
+            <h3 class="font-h3">ID </h3>
+            <h3 class="font-h3">Email </h3>
+            <h3 class="font-h3">Role </h3>
+            <h3 class="font-h3">Membership level</h3>
+          </div>
+          <div class="column right" >
+            <h3 class="custom-info">{{user?.id}}</h3>
+            <h3 class="custom-info">{{user?.email}}</h3>
+            <h3 class="custom-info">{{user?.role.name}}</h3>
+            <h3 class="custom-info" *ngIf="user?.membership_level">{{user?.membership_level.member_type}}</h3>
+          </div>
         </div>
-        <div class="column right" >
-          <h3 class="custom-info">{{user?.role.name}}</h3>
-          <h3 class="custom-info" *ngIf="user?.membership_level">{{user?.membership_level.member_type}}</h3>
-          <app-chart [used]="dataUsed"></app-chart>
+      </tab>
+      <tab>
+        <ng-template tabHeading><i class="fa fa-database"></i> Data Storage</ng-template>
+        <div class="row" class="class-format">
+          <div class="column left">
+            <h3 class="font-h3">Used: <span class="badge badge-danger">{{user?.total_size_files}} MB</span></h3>
+            <h3 class="font-h3">Rest: <span class="badge badge-success">{{user?.membership_level.limit_storage_gigabytes*1000 - user?.total_size_files}} MB </span></h3>
+            <h3 class="font-h3">Total: <span class="badge badge-warning">{{user?.membership_level.limit_storage_gigabytes*1000}} MB</span></h3>
+          </div>
+          <div class="column right" >
+            <app-chart [used]="dataUsed"></app-chart>
+          </div>
         </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
+      </tab>
+    </tabset>
+</div>
 </ng-template>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
