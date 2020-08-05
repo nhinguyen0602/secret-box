@@ -22,7 +22,7 @@ export class UsersComponent implements OnInit {
   ) { }
 
   public users: User[];
-  public displayedColumns: string[] = ['id', 'email', 'member', 'edit'];
+  public searchText: string;
 
   public ngOnInit(): void {
     this.getAllUser();

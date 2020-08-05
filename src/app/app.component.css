@@ -11,12 +11,15 @@
 
 .content {
   flex: 1; 
-  width: 100%;
-  background-color: 	rgb(240, 243, 245);
+  width: 97%;
+  margin-top: 10px;
+  margin-left: 15px;
 }
 
 .all-wrap {
   min-height: calc(100vh - 64px); 
+  height: 92%;
+  background-color: 	rgb(240, 243, 245);
 }
 
 .page-wrap {

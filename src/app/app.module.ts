@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 import {
@@ -9,6 +10,7 @@ import {
 } from '@coreui/angular';
 import {LoadingBarHttpClientModule} from '@ngx-loading-bar/http-client';
 import { ChartsModule } from 'ng2-charts';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -56,6 +58,8 @@ import { SharedModule } from './share/shared.module';
     LoadingBarHttpClientModule,
     AppSidebarModule,
     TabsModule.forRoot(),
+    Ng2SearchPipeModule,
+    FormsModule,
     ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
