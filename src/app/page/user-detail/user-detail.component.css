@@ -28,7 +28,7 @@
   clear: both;
 }
 .font-h3 {
-  color: var(--primary-color);
+  color:var(--blue-color);
 }
  .custom-info {
   margin-left: 15%;

@@ -3,6 +3,7 @@
     --primary-color: rgb(47, 53, 58);
     --white-color: white;
     --black-color: black;
+    --blue-color: rgb(18, 94, 218);
   }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
