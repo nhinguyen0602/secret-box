@@ -8,10 +8,15 @@ table {
   margin-right: 50px;
 }
 
-.h5, .fa {
-  color: var(--primary-color);
+.fa {
+	margin-left: 60px;
 }
 
 .fa-user-circle {
   font-size: 30px;
+}
+
+.title-class {
+  margin-top: 10px;
+  margin-left: 10px;
 }
