@@ -23,6 +23,8 @@ export class UsersComponent implements OnInit {
 
   public users: User[];
   public searchText: string;
+  public page = 1;
+  public pageSize = 4;
 
   public ngOnInit(): void {
     this.getAllUser();

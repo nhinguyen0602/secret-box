@@ -20,7 +20,7 @@
                 <th>Update</th>
               </tr>
             </thead>
-            <tbody *ngFor="let user of users | filter:searchText">
+            <tbody *ngFor="let user of users | filter:searchText | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ">
                 <tr>
                   <td> {{ user.id }} </td>
                   <td style="cursor: grab;" (click)="openDialogUserDetail(user.id)"> {{ user.email }} </td>
@@ -35,14 +35,7 @@
             </tbody>
           </table>
           <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-            <li class="page-item active">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">4</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            <ngb-pagination [pageSize] = "pageSize" [collectionSize]="users?.length" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
           </ul>
         </div>
       </div>
