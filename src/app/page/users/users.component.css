@@ -26,3 +26,10 @@ table {
   float: right;
   margin-right: 70px;
 }
+
+.mat-form-field {
+  font-size: 14px;
+  width: 60%;
+  float: right;
+  margin-right: 20px;
+}
