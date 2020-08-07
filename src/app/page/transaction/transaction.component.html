@@ -6,36 +6,39 @@
           <i class="fa fa-exchange"></i><span class="h5"> Transactions </span>
         </div>
         <div class="card-body">
-          <table class="table">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>User</th>
-              <th>Price</th>
-              <th>Price Code</th>
-              <th>Created At</th>
-            </tr>
-          </thead>
-          <tbody *ngFor="let transaction of transactions">
-              <tr>
-                <td> {{transaction.id}} </td>
-                <td> {{transaction.subscription_purchase.user_detail.email}} </td>
-                <td> {{transaction.price_amount_micros}} </td>
-                <td> {{transaction.price_currency_code}} </td>
-                <td> {{transaction.created_at | date }} </td>
-              </tr>
-          </tbody>
-        </table>
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-          <li class="page-item active">
-            <a class="page-link" href="#">1</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">4</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
+        <mat-table [dataSource]="dataSource" matSort>
+
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+          </ng-container>
+      
+          <ng-container matColumnDef="user">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> User </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.subscription_purchase.user_detail.email}} </mat-cell>
+          </ng-container>
+      
+          <ng-container matColumnDef="price">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Price </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.price_amount_micros}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="price_code">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Price Code </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.price_currency_code}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="created_at">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Created At </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.created_at | date}} </mat-cell>
+          </ng-container>
+      
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;">
+          </mat-row>
+        </mat-table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10]"></mat-paginator>
       </div>
     </div>
   </div>
