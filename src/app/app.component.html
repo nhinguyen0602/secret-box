@@ -1,22 +1,19 @@
-<mat-toolbar color="primary">
-    <span class="material-icons">home_work</span>
-    <span class="fill-remaining-space">SecretBox</span>
+<mat-toolbar>
+  <span class="material-icons">home_work</span>
+  <span class="fill-remaining-space">Secret Box</span>
 </mat-toolbar>
-<ngx-loading-bar [includeSpinner]="false" [color]="'white'" [height]="'4px'"></ngx-loading-bar>
+<ngx-loading-bar [includeSpinner]="false" [color]="'var(--primary-color)'" [height]="'4px'"></ngx-loading-bar>
 <mat-sidenav-container class="all-wrap">
 
-    <mat-sidenav-content class="page-wrap">
-      <main class="content">
-        <button mat-button (click)="drawer.toggle()"*ngIf="isLogin()">
-            <span class="material-icons">menu</span>
-        </button>
-        <router-outlet></router-outlet>
-      </main>
-      <app-footer></app-footer>
-    </mat-sidenav-content>
-  
-    <mat-sidenav #drawer [opened]="isLogin()" mode="over">
+  <mat-sidenav-content class="page-wrap">
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+
+  <mat-sidenav #drawer [opened]="isLogin()" mode="side">
       <app-sidenav></app-sidenav>
-    </mat-sidenav>
-  
-  </mat-sidenav-container>
+  </mat-sidenav>
+
+</mat-sidenav-container>
