@@ -22,11 +22,11 @@ import { HttpTokenInterceptor } from './interceptors/http-token.interceptor';
 import { ConfirmUpdateMembershipComponent } from './page/confirm-update-membership/confirm-update-membership.component';
 import { LoginComponent } from './page/login/login.component';
 import { MembershipLevelComponent } from './page/membership-level/membership-level.component';
+import { NotificationComponent } from './page/notification/notification.component';
 import { TransactionComponent } from './page/transaction/transaction.component';
 import { UserDetailComponent } from './page/user-detail/user-detail.component';
 import { UsersComponent } from './page/users/users.component';
 import { SharedModule } from './share/shared.module';
-import { NotificationComponent } from './notification/notification.component';
 @NgModule({
   declarations: [
     AppComponent,
