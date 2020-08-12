@@ -26,6 +26,7 @@ import { TransactionComponent } from './page/transaction/transaction.component';
 import { UserDetailComponent } from './page/user-detail/user-detail.component';
 import { UsersComponent } from './page/users/users.component';
 import { SharedModule } from './share/shared.module';
+import { NotificationComponent } from './notification/notification.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { SharedModule } from './share/shared.module';
     ButtonComponent,
     ConfirmUpdateMembershipComponent,
     TransactionComponent,
+    NotificationComponent,
   ],
   entryComponents: [
     ConfirmUpdateMembershipComponent,
