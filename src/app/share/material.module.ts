@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { MatCheckboxModule} from '@angular/material/checkbox';
@@ -49,6 +50,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
      MatRadioModule,
      MatMenuModule,
      MatProgressSpinnerModule,
+     MatBottomSheetModule,
   ],
   // tslint:disable-next-line:object-literal-sort-keys
   exports: [
@@ -74,6 +76,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
      MatRadioModule,
      MatMenuModule,
      MatProgressSpinnerModule,
+     MatBottomSheetModule,
   ],
   providers: [
      MatDatepickerModule,

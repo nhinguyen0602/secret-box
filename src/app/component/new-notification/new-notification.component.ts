@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-new-notification',
@@ -8,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewNotificationComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    // tslint:disable-next-line:variable-name
+    private _bottomSheetRef: MatBottomSheetRef<NewNotificationComponent>,
+  ) { }
 
   public ngOnInit() {
+  }
+
+  public openLink(event: MouseEvent): void {
+    this._bottomSheetRef.dismiss();
+    event.preventDefault();
   }
 
 }
