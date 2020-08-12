@@ -5,16 +5,17 @@ import { AuthService } from './service/auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  // tslint:disable-next-line:object-literal-sort-keys
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'secret-box';
+  public title = 'secret-box';
 
   constructor(
-    private authService: AuthService
-  ){}
+    private authService: AuthService,
+  ) {}
 
-  public isLogin(){
+  public isLogin() {
     return this.authService.isLoggedIn();
   }
 
