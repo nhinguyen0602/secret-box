@@ -16,6 +16,7 @@ import { ButtonComponent } from './component/button/button.component';
 import { ChartComponent } from './component/chart/chart.component';
 import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { NewNotificationComponent } from './component/new-notification/new-notification.component';
 import { SidenavComponent } from './component/sidenav/sidenav.component';
 import { HttpErrorInterceptor } from './interceptors/error-handler.interceptor';
 import { HttpTokenInterceptor } from './interceptors/http-token.interceptor';
@@ -42,6 +43,7 @@ import { SharedModule } from './share/shared.module';
     ConfirmUpdateMembershipComponent,
     TransactionComponent,
     NotificationComponent,
+    NewNotificationComponent,
   ],
   entryComponents: [
     ConfirmUpdateMembershipComponent,
