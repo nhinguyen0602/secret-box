@@ -19,4 +19,11 @@ export class NotificationService {
       map((res) => res),
     );
   }
+
+  public pushNotification(content: string) {
+    return this.http.post<any[]>(`${this.notificationUrl}/push_notification`, {message: content}, {observe: 'response'}).pipe(
+      map((res) => res),
+    );
+  }
+
 }

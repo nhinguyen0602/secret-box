@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { NotificationService } from 'src/app/service/notification.service';
 
 @Component({
   selector: 'app-new-notification',
@@ -14,17 +15,18 @@ export class NewNotificationComponent implements OnInit {
     // tslint:disable-next-line:variable-name
     private _bottomSheetRef: MatBottomSheetRef<NewNotificationComponent>,
     private fb: FormBuilder,
+    private notificationService: NotificationService,
   ) { }
 
   public notificationForm: FormGroup;
 
   public ngOnInit() {
     this.notificationForm = this.fb.group({
-      content: ['', Validators.required],
+      message: ['', Validators.required],
     });
   }
 
-  get content() { return this.notificationForm.get('content'); }
+  get message() { return this.notificationForm.get('message'); }
 
   public openLink(event: MouseEvent): void {
     this._bottomSheetRef.dismiss();
@@ -35,6 +37,10 @@ export class NewNotificationComponent implements OnInit {
     if (this.notificationForm.invalid) {
       return;
     }
+    this.notificationService.pushNotification(this.message.value).subscribe( (res) => {
+      this.notificationForm.reset();
+      this._bottomSheetRef.dismiss();
+    });
   }
 
 }
