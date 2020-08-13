@@ -5,5 +5,12 @@
     --black-color: black;
     --blue-color: rgb(18, 94, 218);
   }
+.green-snackbar {
+  background: rgb(72, 204, 72);
+}
+
+.red-snackbar {
+  background: rgb(216, 22, 22);
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

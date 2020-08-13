@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { CustomSnackbarService } from 'src/app/service/custom-snackbar.service';
 import { NotificationService } from 'src/app/service/notification.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class NewNotificationComponent implements OnInit {
     private _bottomSheetRef: MatBottomSheetRef<NewNotificationComponent>,
     private fb: FormBuilder,
     private notificationService: NotificationService,
+    private customSnackbar: CustomSnackbarService,
   ) { }
 
   public notificationForm: FormGroup;
@@ -40,6 +42,7 @@ export class NewNotificationComponent implements OnInit {
     this.notificationService.pushNotification(this.message.value).subscribe( (res) => {
       this.notificationForm.reset();
       this._bottomSheetRef.dismiss();
+      this.customSnackbar.success('Successful');
     });
   }
 
