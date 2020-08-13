@@ -13,7 +13,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './component/button/button.component';
-import { ChartComponent } from './component/chart/chart.component';
+import { PieChartComponent } from './component/chart/pie-chart/pie-chart.component';
 import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { NewNotificationComponent } from './component/new-notification/new-notification.component';
@@ -33,7 +33,7 @@ import { SharedModule } from './share/shared.module';
     LoginComponent,
     UsersComponent,
     UserDetailComponent,
-    ChartComponent,
+    PieChartComponent,
     MembershipLevelComponent,
     ConfirmDialogComponent,
     SidenavComponent,

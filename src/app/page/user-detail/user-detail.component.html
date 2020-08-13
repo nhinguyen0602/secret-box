@@ -35,7 +35,7 @@
           <h3 class="font-h3">Total: <span class="badge badge-warning">{{user?.membership_level.limit_storage_gigabytes*1000}} MB</span></h3>
         </div>
         <div class="column right" >
-          <app-chart [used]="dataUsed"></app-chart>
+          <app-pie-chart [used]="dataUsed"></app-pie-chart>
         </div>
       </div>
     </tab>
