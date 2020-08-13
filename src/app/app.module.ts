@@ -13,6 +13,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './component/button/button.component';
+import { BarChartComponent } from './component/chart/bar-chart/bar-chart.component';
 import { PieChartComponent } from './component/chart/pie-chart/pie-chart.component';
 import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
 import { FooterComponent } from './component/footer/footer.component';
@@ -42,6 +43,7 @@ import { SharedModule } from './share/shared.module';
     ConfirmUpdateMembershipComponent,
     TransactionComponent,
     NewNotificationComponent,
+    BarChartComponent,
   ],
   entryComponents: [
     ConfirmUpdateMembershipComponent,
