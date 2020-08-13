@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './page/login/login.component';
-import { NotificationComponent } from './page/notification/notification.component';
 import { TransactionComponent } from './page/transaction/transaction.component';
 import { UsersComponent } from './page/users/users.component';
 
@@ -21,11 +20,6 @@ const routes: Routes = [
     path: 'transactions',
     // tslint:disable-next-line:object-literal-sort-keys
     component: TransactionComponent,
-  },
-  {
-    path: 'notification',
-    // tslint:disable-next-line:object-literal-sort-keys
-    component: NotificationComponent,
   },
 ];
 

@@ -28,7 +28,19 @@ table {
 
 .mat-form-field {
   font-size: 14px;
-  width: 50%;
-  float: right;
+  width: 70%;
   margin-right: 30px;
+}
+
+.btn {
+  width: 20%;
+  float: right;
+  margin-right: 10%;
+}
+
+.btn-notification {
+  float: right;
+  margin-right: 10%;
+  background-color: var(--primary-color);
+  color: var(--white-color);
 }
