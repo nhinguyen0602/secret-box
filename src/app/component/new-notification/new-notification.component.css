@@ -21,3 +21,21 @@
   background-color:gray;
   color: white;
 }
+
+.class-field {
+  width: 100%;
+}
+
+.class-text {
+  width: 100%;
+}
+
+.class-input {
+  height: 200px;
+}
+
+.btn-send {
+  float: right;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
