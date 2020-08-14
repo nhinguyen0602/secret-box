@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BarChartComponent } from './component/chart/bar-chart/bar-chart.component';
 import { LoginComponent } from './page/login/login.component';
 import { TransactionComponent } from './page/transaction/transaction.component';
 import { UsersComponent } from './page/users/users.component';
@@ -20,6 +21,11 @@ const routes: Routes = [
     path: 'transactions',
     // tslint:disable-next-line:object-literal-sort-keys
     component: TransactionComponent,
+  },
+  {
+    path: 'chart',
+    // tslint:disable-next-line:object-literal-sort-keys
+    component: BarChartComponent,
   },
 ];
 
