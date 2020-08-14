@@ -1,10 +1,11 @@
-<mat-drawer-container class="container" hasBackdrop="false">
-  <mat-drawer class="sidenav" [opened]="isLogin()" mode="over">
+<mat-drawer-container class="container" hasBackdrop="false" > 
+  <mat-drawer class="sidenav" [opened]="isLogin()" mode="over" color = "primary">
       <mat-action-list>
-          <app-button routerLink="/users" icon="supervised_user_circle" title="Thông tin người dùng"></app-button>
-          <app-button routerLink="/transactions" icon="brightness_7" title="Danh sách giao dịch"></app-button>
-          <app-button routerLink="" icon="open_in_browser" title="Thống kê"></app-button>
-          <app-button routerLink="" icon="login" title="Đăng xuất" (click)="logout()"></app-button>
+          <app-button routerLink="/users" icon="supervised_user_circle" title="Users"></app-button>
+          <app-button routerLink="/transactions" icon="brightness_7" title="Transactions"></app-button>
+          <app-button routerLink="" icon="open_in_browser" title="Statistical"></app-button>
+          <app-button routerLink="" icon="notifications_active" title="Notification"></app-button>
+          <app-button routerLink="" icon="login" title="Logout" (click)="logout()"></app-button>
       </mat-action-list>
   </mat-drawer>
 </mat-drawer-container>
