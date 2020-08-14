@@ -1,8 +1,10 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { NewNotificationComponent } from 'src/app/component/new-notification/new-notification.component';
 import { AuthService } from 'src/app/service/auth.service';
 import { UsersService } from 'src/app/service/users.service';
 import { User } from 'src/app/share/model/user';
@@ -26,6 +28,8 @@ export class UsersComponent implements OnInit, AfterViewInit {
     private dialog: MatDialog,
     private router: Router,
     private authService: AuthService,
+    // tslint:disable-next-line:variable-name
+    private _bottomSheet: MatBottomSheet,
   ) {
     this.dataSource = new MatTableDataSource(this.users);
    }
@@ -67,5 +71,9 @@ export class UsersComponent implements OnInit, AfterViewInit {
     filterValue = filterValue.trim();
     filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
+  }
+
+  public openBottomSheet(): void {
+    this._bottomSheet.open(NewNotificationComponent);
   }
 }

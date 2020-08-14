@@ -1,0 +1,30 @@
+<div class="layout-noti">
+  <mat-toolbar>
+    <mat-icon>notifications_none</mat-icon>
+    <span>New Notification</span>
+    <span class="class-spacer"></span>
+    <button mat-icon-button class="class-icon" (click)="openLink($event)">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div>
+    <mat-form-field class="class-field">
+      <mat-label>TO:</mat-label>
+      <mat-select>
+        <mat-option value="option">All</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <form [formGroup]="notificationForm" class="form" >
+    <mat-form-field class="class-text" appearance="outline">
+      <mat-label>Message</mat-label>
+      <textarea matInput class="class-input" placeholder="Placeholder" formControlName="message"></textarea>
+      <mat-error >
+        Please enter your message
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button class="btn-send" (click)="submitForm()">Send</button>
+  </form>
+  </div>
+</div>

@@ -11,6 +11,9 @@
               <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
             </mat-form-field>
           </div>
+          <div class="col">
+            <button mat-raised-button class="btn-notification" (click)="openBottomSheet()"><mat-icon>notifications_active</mat-icon> Notification</button>
+        </div>
         </div>
         <div class="card-body">
         <mat-table [dataSource]="dataSource" matSort>
