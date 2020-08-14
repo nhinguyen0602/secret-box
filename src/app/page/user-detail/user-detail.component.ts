@@ -1,32 +1,35 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { User } from 'src/app/share/model/user';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { UsersService } from 'src/app/service/users.service';
+import { User } from 'src/app/share/model/user';
 
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css']
+  // tslint:disable-next-line:object-literal-sort-keys
+  styleUrls: ['./user-detail.component.css'],
 })
 export class UserDetailComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private userService: UsersService
+    private userService: UsersService,
     ) { }
 
     public user: User;
     public dataUsed: number;
+    public isLoading = true;
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.getUserDetail();
   }
 
-  getUserDetail(){
-    this.userService.getUserDetail(this.data.name).subscribe(user => {
+  public getUserDetail() {
+    this.userService.getUserDetail(this.data.name).subscribe((user) => {
       this.user = user;
       this.dataUsed = user.total_size_files / 1000 / this.user.membership_level.limit_storage_gigabytes * 100;
+      this.isLoading = false;
     });
   }
 

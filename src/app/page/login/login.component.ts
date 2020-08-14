@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+// tslint:disable-next-line:ordered-imports
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { CustomSnackbarService } from 'src/app/service/custom-snackbar.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  // tslint:disable-next-line:object-literal-sort-keys
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
 
@@ -15,28 +17,28 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private snackbarService: CustomSnackbarService,
-    private router: Router
+    private router: Router,
   ) { }
 
-  loginForm: FormGroup;
-  ngOnInit(): void {
-    if (this.authService.isLoggedIn()){
+  public loginForm: FormGroup;
+  public ngOnInit(): void {
+    if (this.authService.isLoggedIn()) {
       this.router.navigate(['users']);
     }
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
-      password: ['', Validators.compose([Validators.required])]
+      password: ['', Validators.compose([Validators.required])],
     });
   }
 
   get email() { return this.loginForm.get('email'); }
   get password() { return this.loginForm.get('password'); }
 
-  submitForm(): void {
+  public submitForm(): void {
     if (this.loginForm.invalid) {
       return;
     }
-    this.authService.login(this.email.value, this.password.value).subscribe(res => {
+    this.authService.login(this.email.value, this.password.value).subscribe( (res) => {
       localStorage.setItem('auth', res.headers.get('Authorization'));
       localStorage.setItem('currentUser', res.body.id);
       this.router.navigate(['users']);

@@ -1,27 +1,29 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { SnackBarComponent } from '../component/snack-bar/snack-bar.component';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CustomSnackbarService {
-  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
-  verticalPosition: MatSnackBarVerticalPosition = 'top';
-  autoHide = 3000;
+  public horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  public verticalPosition: MatSnackBarVerticalPosition = 'top';
+  public autoHide = 3000;
 
   constructor(public snackbar: MatSnackBar) {}
 
   public openSnackBar(status, message: string, classSnack: string) {
     this.snackbar.openFromComponent(SnackBarComponent, {
       verticalPosition: this.verticalPosition,
+      // tslint:disable-next-line:object-literal-sort-keys
       horizontalPosition: this.horizontalPosition,
       duration: this.autoHide,
       panelClass: [classSnack],
       data: {
         status,
-        message
-      }
+        // tslint:disable-next-line:object-literal-sort-keys
+        message,
+      },
     });
   }
 

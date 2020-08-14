@@ -1,12 +1,13 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { User } from 'src/app/share/model/user';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { UsersService } from 'src/app/service/users.service';
+import { User } from 'src/app/share/model/user';
 
 @Component({
   selector: 'app-confirm-update-membership',
   templateUrl: './confirm-update-membership.component.html',
-  styleUrls: ['./confirm-update-membership.component.css']
+  // tslint:disable-next-line:object-literal-sort-keys
+  styleUrls: ['./confirm-update-membership.component.css'],
 })
 export class ConfirmUpdateMembershipComponent implements OnInit {
   private idMember: number;
@@ -20,7 +21,7 @@ export class ConfirmUpdateMembershipComponent implements OnInit {
     this.user = data.user;
     this.message = `Are you want update membership level of ${this.user.email} ?`;
   }
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
   public onConfirm(): void {

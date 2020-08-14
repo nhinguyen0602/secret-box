@@ -3,20 +3,21 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
-import { MembershipLevel } from '../share/model/membership-level';
+import { Transaction } from '../share/model/transaction';
 
 @Injectable({
   providedIn: 'root',
 })
-export class MembershipLevelService {
+export class TransactionService {
 
-  public url = environment.apiUrl + `/membership_levels`;
+  public transactionUrl = environment.apiUrl + `/transactions`;
+
   constructor(
     public http: HttpClient,
   ) { }
 
-  public getAllMembershipLevel(): Observable<MembershipLevel[]> {
-    return this.http.get<MembershipLevel[]>(this.url).pipe(
+  public getAllTransaction(): Observable<Transaction[]> {
+    return this.http.get<Transaction[]>(this.transactionUrl).pipe(
       map((res) => res),
     );
   }
