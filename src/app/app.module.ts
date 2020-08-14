@@ -16,6 +16,7 @@ import { ButtonComponent } from './component/button/button.component';
 import { BarChartComponent } from './component/chart/bar-chart/bar-chart.component';
 import { PieChartComponent } from './component/chart/pie-chart/pie-chart.component';
 import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
+import { DatePickerComponent } from './component/date-picker/date-picker.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { NewNotificationComponent } from './component/new-notification/new-notification.component';
 import { SidenavComponent } from './component/sidenav/sidenav.component';
@@ -46,6 +47,7 @@ import { SharedModule } from './share/shared.module';
     NewNotificationComponent,
     BarChartComponent,
     StatisticalComponent,
+    DatePickerComponent,
   ],
   entryComponents: [
     ConfirmUpdateMembershipComponent,
