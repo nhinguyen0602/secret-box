@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BarChartComponent } from './component/chart/bar-chart/bar-chart.component';
 import { LoginComponent } from './page/login/login.component';
+import { StatisticalComponent } from './page/statistical/statistical.component';
 import { TransactionComponent } from './page/transaction/transaction.component';
 import { UsersComponent } from './page/users/users.component';
 
@@ -23,9 +23,9 @@ const routes: Routes = [
     component: TransactionComponent,
   },
   {
-    path: 'chart',
+    path: 'statistical',
     // tslint:disable-next-line:object-literal-sort-keys
-    component: BarChartComponent,
+    component: StatisticalComponent,
   },
 ];
 
