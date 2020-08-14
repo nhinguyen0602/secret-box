@@ -1,0 +1,10 @@
+<button mat-button [matMenuTriggerFor]="menu">
+  <span class="material-icons"
+  >upgrade
+  </span>
+</button>
+<mat-menu #menu="matMenu">
+  <div *ngFor="let membershipLevel of membershipLevels">
+    <button mat-menu-item (click)="confirmDialog(membershipLevel.id)">{{membershipLevel.member_type}}</button>
+  </div>
+</mat-menu>
