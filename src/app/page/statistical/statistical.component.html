@@ -10,7 +10,7 @@
   </mat-form-field>
 </div>
 <div class="col">
-  <div *ngIf="selected == 'day'; then byday"></div>
+  <app-date-picker [choice]="selected"></app-date-picker>
 </div>
 </div>
 <app-bar-chart></app-bar-chart>

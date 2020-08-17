@@ -4,8 +4,8 @@
   <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
   <mat-datepicker #dp
                   startView="multi-year"
-                  (yearSelected)="chosenYearHandler($event)"
+                  (yearSelected)="_yearSelectedHandle($event,dp)"
                   (monthSelected)="chosenMonthHandler($event, dp)"
-                  panelClass="example-month-picker">
+                  panelClass="month-picker">
   </mat-datepicker>
 </mat-form-field>

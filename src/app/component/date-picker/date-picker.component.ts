@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input, Output} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter} from '@angular/material-moment-adapter';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
@@ -16,7 +16,7 @@ export const MY_FORMATS = {
   // tslint:disable-next-line:object-literal-sort-keys
   display: {
     dateInput: 'MMMM YYYY',
-    monthYearLabel: 'MMM YYYY',
+    monthYearLabel: 'MMMM YYYY',
     // tslint:disable-next-line:object-literal-sort-keys
     dateA11yLabel: 'LL',
     monthYearA11yLabel: 'MMMM YYYY',
@@ -40,18 +40,24 @@ export const MY_FORMATS = {
   ],
 })
 export class DatePickerComponent {
+  @Input() public choice: string;
   public date = new FormControl(moment());
 
-  public chosenYearHandler(normalizedYear: Moment) {
+  public _yearSelectedHandle(normalizedYear: Moment, datepicker: MatDatepicker<Moment>) {
     const ctrlValue = this.date.value;
     ctrlValue.year(normalizedYear.year());
     this.date.setValue(ctrlValue);
+    localStorage.setItem('yearCurrent', normalizedYear.year() + '');
+    if (this.choice !== 'day') {
+      datepicker.close();
+    }
   }
 
   public chosenMonthHandler(normalizedMonth: Moment, datepicker: MatDatepicker<Moment>) {
     const ctrlValue = this.date.value;
     ctrlValue.month(normalizedMonth.month());
     this.date.setValue(ctrlValue);
+    localStorage.setItem('monthCurrent', normalizedMonth.month() + '');
     datepicker.close();
   }
 
