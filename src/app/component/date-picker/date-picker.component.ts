@@ -11,11 +11,11 @@ const moment = _rollupMoment || _moment;
 
 export const MY_FORMATS = {
   parse: {
-    dateInput: 'MM/YYYY',
+    dateInput: 'MMMM YYYY',
   },
   // tslint:disable-next-line:object-literal-sort-keys
   display: {
-    dateInput: 'MM/YYYY',
+    dateInput: 'MMMM YYYY',
     monthYearLabel: 'MMM YYYY',
     // tslint:disable-next-line:object-literal-sort-keys
     dateA11yLabel: 'LL',
