@@ -1,7 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'lodash-es';
-import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 @Injectable({
   providedIn: 'root',

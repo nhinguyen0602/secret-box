@@ -1,4 +1,4 @@
-import {Component, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter} from '@angular/material-moment-adapter';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
@@ -42,19 +42,15 @@ export const MY_FORMATS = {
 })
 export class DatePickerComponent {
   @Input() public choice: string;
+  @Output() public yearChange = new EventEmitter();
+  @Output() public monthChange = new EventEmitter();
   public date = new FormControl(moment());
-  public year: number;
-  public month: number;
-
-  constructor(
-    private statisticalService: StatisticalService,
-  ) { }
 
   public _yearSelectedHandle(normalizedYear: Moment, datepicker: MatDatepicker<Moment>) {
     const ctrlValue = this.date.value;
     ctrlValue.year(normalizedYear.year());
     this.date.setValue(ctrlValue);
-    localStorage.setItem('yearCurrent', normalizedYear.year() + '');
+    this.yearChange.emit(normalizedYear.year());
     if (this.choice !== 'day') {
       datepicker.close();
     }
@@ -64,19 +60,8 @@ export class DatePickerComponent {
     const ctrlValue = this.date.value;
     ctrlValue.month(normalizedMonth.month());
     this.date.setValue(ctrlValue);
-    localStorage.setItem('monthCurrent', normalizedMonth.month() + '');
-    this.getData();
+    this.monthChange.emit(normalizedMonth.month() + 1);
     datepicker.close();
-  }
-
-  public getData() {
-    // tslint:disable-next-line:radix
-    this.year = parseInt(localStorage.getItem('yearCurrent'));
-    // tslint:disable-next-line:radix
-    this.month = parseInt(localStorage.getItem('monthCurrent')) + 1;
-    this.statisticalService.getStatistical(this.month, this.year).subscribe((res) => {
-      console.log(res);
-    });
   }
 
 }

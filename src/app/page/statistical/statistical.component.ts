@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StatisticalService } from 'src/app/service/statistical.service';
 
 @Component({
   selector: 'app-statistical',
@@ -8,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatisticalComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private statisticalService: StatisticalService,
+  ) { }
+  public year: number;
+  public month: number;
   public selected = 'day';
+  public data: any[];
+
   public ngOnInit() {
   }
 
+  public getYear(e) {
+    this.year = e;
+  }
+
+  public getMonth(e) {
+    this.month = e;
+    this.getData();
+  }
+
+  public getData() {
+    this.statisticalService.getStatistical(this.month, this.year).subscribe((res) => this.data = res);
+  }
 }
