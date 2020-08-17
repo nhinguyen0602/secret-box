@@ -6,6 +6,7 @@ import {MatDatepicker} from '@angular/material/datepicker';
 
 import * as _moment from 'moment';
 import {default as _rollupMoment, Moment} from 'moment';
+import { StatisticalService } from 'src/app/service/statistical.service';
 
 const moment = _rollupMoment || _moment;
 
@@ -42,6 +43,12 @@ export const MY_FORMATS = {
 export class DatePickerComponent {
   @Input() public choice: string;
   public date = new FormControl(moment());
+  public year: number;
+  public month: number;
+
+  constructor(
+    private statisticalService: StatisticalService,
+  ) { }
 
   public _yearSelectedHandle(normalizedYear: Moment, datepicker: MatDatepicker<Moment>) {
     const ctrlValue = this.date.value;
@@ -58,7 +65,18 @@ export class DatePickerComponent {
     ctrlValue.month(normalizedMonth.month());
     this.date.setValue(ctrlValue);
     localStorage.setItem('monthCurrent', normalizedMonth.month() + '');
+    this.getData();
     datepicker.close();
+  }
+
+  public getData() {
+    // tslint:disable-next-line:radix
+    this.year = parseInt(localStorage.getItem('yearCurrent'));
+    // tslint:disable-next-line:radix
+    this.month = parseInt(localStorage.getItem('monthCurrent')) + 1;
+    this.statisticalService.getStatistical(this.month, this.year).subscribe((res) => {
+      console.log(res);
+    });
   }
 
 }
