@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class StatisticalComponent implements OnInit {
 
   constructor() { }
-
+  public selected = 'day';
   public ngOnInit() {
   }
 
