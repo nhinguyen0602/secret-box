@@ -10,8 +10,7 @@
   </mat-form-field>
 </div>
 <div class="col">
-  <div *ngIf="selected === 'day'; then byday"></div>
-  <!-- <app-date-picker [choice]="selected" (yearChange)="getYear($event)" (monthChange)="getMonth($event)"></app-date-picker> -->
+  <div *ngIf="selected === 'day' || selected === 'month'; then byday"></div>
 </div>
 </div>
 <app-bar-chart [year]="year" [month]="month" [choice]="selected"></app-bar-chart>
