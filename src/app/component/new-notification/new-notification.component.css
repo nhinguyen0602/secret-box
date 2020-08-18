@@ -1,0 +1,41 @@
+.layout-noti {
+  width: 550px;
+  height: 400px;
+  position: relative;
+}
+
+.mat-toolbar {
+  height: 10%;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  border: solid ;
+  border-radius: 10px;
+}
+
+.class-spacer {
+  flex: 1 1 auto;
+}
+
+.class-icon:hover {
+  background-color:gray;
+  color: white;
+}
+
+.class-field {
+  width: 100%;
+}
+
+.class-text {
+  width: 100%;
+}
+
+.class-input {
+  height: 200px;
+}
+
+.btn-send {
+  float: right;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}

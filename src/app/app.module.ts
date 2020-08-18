@@ -13,15 +13,19 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './component/button/button.component';
-import { ChartComponent } from './component/chart/chart.component';
+import { BarChartComponent } from './component/chart/bar-chart/bar-chart.component';
+import { PieChartComponent } from './component/chart/pie-chart/pie-chart.component';
 import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
+import { DatePickerComponent } from './component/date-picker/date-picker.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { NewNotificationComponent } from './component/new-notification/new-notification.component';
 import { SidenavComponent } from './component/sidenav/sidenav.component';
 import { HttpErrorInterceptor } from './interceptors/error-handler.interceptor';
 import { HttpTokenInterceptor } from './interceptors/http-token.interceptor';
 import { ConfirmUpdateMembershipComponent } from './page/confirm-update-membership/confirm-update-membership.component';
 import { LoginComponent } from './page/login/login.component';
 import { MembershipLevelComponent } from './page/membership-level/membership-level.component';
+import { StatisticalComponent } from './page/statistical/statistical.component';
 import { TransactionComponent } from './page/transaction/transaction.component';
 import { UserDetailComponent } from './page/user-detail/user-detail.component';
 import { UsersComponent } from './page/users/users.component';
@@ -32,7 +36,7 @@ import { SharedModule } from './share/shared.module';
     LoginComponent,
     UsersComponent,
     UserDetailComponent,
-    ChartComponent,
+    PieChartComponent,
     MembershipLevelComponent,
     ConfirmDialogComponent,
     SidenavComponent,
@@ -40,11 +44,16 @@ import { SharedModule } from './share/shared.module';
     ButtonComponent,
     ConfirmUpdateMembershipComponent,
     TransactionComponent,
+    NewNotificationComponent,
+    BarChartComponent,
+    StatisticalComponent,
+    DatePickerComponent,
   ],
   entryComponents: [
     ConfirmUpdateMembershipComponent,
     ConfirmDialogComponent,
     UserDetailComponent,
+    NewNotificationComponent,
   ],
   imports: [
     BrowserModule,

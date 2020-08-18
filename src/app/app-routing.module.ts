@@ -1,28 +1,37 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './page/login/login.component';
-import { UsersComponent } from './page/users/users.component';
+import { StatisticalComponent } from './page/statistical/statistical.component';
 import { TransactionComponent } from './page/transaction/transaction.component';
-
+import { UsersComponent } from './page/users/users.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/users' },
   {
     path: 'login',
-    component: LoginComponent
+    // tslint:disable-next-line:object-literal-sort-keys
+    component: LoginComponent,
   },
   {
     path: 'users',
-    component: UsersComponent
+    // tslint:disable-next-line:object-literal-sort-keys
+    component: UsersComponent,
   },
   {
     path: 'transactions',
-    component: TransactionComponent
+    // tslint:disable-next-line:object-literal-sort-keys
+    component: TransactionComponent,
+  },
+  {
+    path: 'statistical',
+    // tslint:disable-next-line:object-literal-sort-keys
+    component: StatisticalComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  // tslint:disable-next-line:object-literal-sort-keys
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
