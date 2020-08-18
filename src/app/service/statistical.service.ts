@@ -12,10 +12,13 @@ export class StatisticalService {
     private http: HttpClient,
   ) { }
 
-  public getStatistical(month: number, year: number): Observable<any[]> {
-    if (month === -1) {
+  public getStatistical(month: number, year: number, type: string): Observable<any[]> {
+    if (type === 'year') {
+      return this.http.get<any[]>(this.url).pipe();
+    } else if (type === 'month') {
       return this.http.get<any[]>(`${this.url}?year=${year}`).pipe();
-    }
+    } else {
     return this.http.get<any[]>(`${this.url}?month=${month + 1}&year=${year}`).pipe();
+    }
   }
 }

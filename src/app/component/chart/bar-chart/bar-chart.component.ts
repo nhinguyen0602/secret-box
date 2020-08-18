@@ -40,15 +40,11 @@ export class BarChartComponent implements OnChanges, OnInit {
 
   public getData() {
     this.isLoading = true;
-    if ((!this.year || this.month === null) && this.choice === 'day') {
+    if (!this.year || !this.month) {
       this.year = new Date().getFullYear();
       this.month = new Date().getMonth();
     }
-    if (this.choice === 'month') {
-      this.year = new Date().getFullYear();
-      this.month = -1;
-    }
-    this.statisticalService.getStatistical(this.month, this.year).subscribe((res) => {
+    this.statisticalService.getStatistical(this.month, this.year, this.choice).subscribe((res) => {
       this.barChartData[0].data = res.map((e) => e.statistical);
       this.barChartLabels = res.map((e) => e.time);
       this.isLoading = false;
