@@ -12,7 +12,7 @@ export class BarChartComponent implements OnChanges, OnInit {
   constructor(
     private statisticalService: StatisticalService,
   ) { }
-
+  @Input() public choice: string;
   @Input() public year: number;
   @Input() public month: number;
 
@@ -40,13 +40,17 @@ export class BarChartComponent implements OnChanges, OnInit {
 
   public getData() {
     this.isLoading = true;
-    if (!this.year || this.month === null) {
+    if ((!this.year || this.month === null) && this.choice === 'day') {
       this.year = new Date().getFullYear();
       this.month = new Date().getMonth();
     }
-    this.statisticalService.getStatistical(this.month + 1, this.year).subscribe((res) => {
+    if (this.choice === 'month') {
+      this.year = new Date().getFullYear();
+      this.month = -1;
+    }
+    this.statisticalService.getStatistical(this.month, this.year).subscribe((res) => {
       this.barChartData[0].data = res.map((e) => e.statistical);
-      this.barChartLabels = res.map((e) => e.date);
+      this.barChartLabels = res.map((e) => e.time);
       this.isLoading = false;
     });
   }

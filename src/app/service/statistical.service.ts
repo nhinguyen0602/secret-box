@@ -13,6 +13,9 @@ export class StatisticalService {
   ) { }
 
   public getStatistical(month: number, year: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.url}?month=${month}&year=${year}`).pipe();
+    if (month === -1) {
+      return this.http.get<any[]>(`${this.url}?year=${year}`).pipe();
+    }
+    return this.http.get<any[]>(`${this.url}?month=${month + 1}&year=${year}`).pipe();
   }
 }
