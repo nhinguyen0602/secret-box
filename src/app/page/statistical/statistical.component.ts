@@ -23,7 +23,6 @@ export class StatisticalComponent implements OnInit {
 
   public getMonth(e) {
     this.month = e;
-    // console.log('loi o day u: ' + this.month);
   }
 
 }

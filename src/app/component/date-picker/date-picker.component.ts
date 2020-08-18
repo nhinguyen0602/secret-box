@@ -61,7 +61,6 @@ export class DatePickerComponent {
     ctrlValue.month(normalizedMonth.month());
     this.date.setValue(ctrlValue);
     this.monthChange.emit(normalizedMonth.month());
-    // console.log('loi o day' + normalizedMonth.month());
     datepicker.close();
   }
 
