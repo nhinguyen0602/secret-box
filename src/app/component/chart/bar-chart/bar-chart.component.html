@@ -1,4 +1,4 @@
-<div class="bar-chart">
+<div *ngIf="!isLoading" class="bar-chart">
     <div style="display: block">
       <canvas baseChart
               [datasets]="barChartData"

@@ -9,13 +9,10 @@ import { StatisticalService } from 'src/app/service/statistical.service';
 })
 export class StatisticalComponent implements OnInit {
 
-  constructor(
-    private statisticalService: StatisticalService,
-  ) { }
+  constructor() { }
   public year: number;
   public month: number;
   public selected = 'day';
-  public data: any[];
 
   public ngOnInit() {
   }
@@ -26,10 +23,7 @@ export class StatisticalComponent implements OnInit {
 
   public getMonth(e) {
     this.month = e;
-    this.getData();
+    // console.log('loi o day u: ' + this.month);
   }
 
-  public getData() {
-    this.statisticalService.getStatistical(this.month, this.year).subscribe((res) => this.data = res);
-  }
 }

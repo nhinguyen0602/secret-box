@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { StatisticalService } from 'src/app/service/statistical.service';
 
 @Component({
   selector: 'app-bar-chart',
@@ -6,23 +7,48 @@ import { Component, OnInit } from '@angular/core';
   // tslint:disable-next-line:object-literal-sort-keys
   styleUrls: ['./bar-chart.component.css'],
 })
-export class BarChartComponent implements OnInit {
+export class BarChartComponent implements OnChanges, OnInit {
 
-  constructor() { }
+  constructor(
+    private statisticalService: StatisticalService,
+  ) { }
+
+  @Input() public year: number;
+  @Input() public month: number;
 
   public barChartOptions = {
     scaleShowVerticalLines: false,
     // tslint:disable-next-line:object-literal-sort-keys
     responsive: true,
   };
-  public barChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public data: any[];
+  public barChartLabels = [];
   public barChartType = 'bar';
   public barChartLegend = true;
   public barChartData = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
+    {data: [], label: 'Statistical'},
   ];
+  public isLoading = true;
+
+  public ngOnChanges() {
+    this.getData();
+  }
 
   public ngOnInit() {
+    this.getData();
+  }
+
+  public getData() {
+    this.isLoading = true;
+    if (!this.year || this.month === null) {
+      this.year = new Date().getFullYear();
+      this.month = new Date().getMonth();
+    }
+    this.statisticalService.getStatistical(this.month + 1, this.year).subscribe((res) => {
+      this.barChartData[0].data = res.map((e) => e.statistical);
+      this.barChartLabels = res.map((e) => e.date);
+      this.isLoading = false;
+    });
   }
 
 }

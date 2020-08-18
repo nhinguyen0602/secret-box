@@ -13,7 +13,7 @@
   <app-date-picker [choice]="selected" (yearChange)="getYear($event)" (monthChange)="getMonth($event)"></app-date-picker>
 </div>
 </div>
-<app-bar-chart></app-bar-chart>
+<app-bar-chart [year]="year" [month]="month"></app-bar-chart>
 <ng-template #byday>
   <app-date-picker></app-date-picker>
 </ng-template>
