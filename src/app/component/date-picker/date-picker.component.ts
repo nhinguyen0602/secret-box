@@ -6,7 +6,6 @@ import {MatDatepicker} from '@angular/material/datepicker';
 
 import * as _moment from 'moment';
 import {default as _rollupMoment, Moment} from 'moment';
-import { StatisticalService } from 'src/app/service/statistical.service';
 
 const moment = _rollupMoment || _moment;
 

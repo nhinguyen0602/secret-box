@@ -40,7 +40,7 @@ export class BarChartComponent implements OnChanges, OnInit {
 
   public getData() {
     this.isLoading = true;
-    if (!this.year || !this.month) {
+    if (!this.year || this.month === null) {
       this.year = new Date().getFullYear();
       this.month = new Date().getMonth();
     }
