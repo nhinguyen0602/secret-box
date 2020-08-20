@@ -1,7 +1,7 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import { SnackBarComponent } from '../component/snack-bar/snack-bar.component';
+import { SnackBarComponent } from '../components/snack-bar/snack-bar.component';
 import {AppMaterialModule} from './material.module';
 @NgModule({
   declarations: [
