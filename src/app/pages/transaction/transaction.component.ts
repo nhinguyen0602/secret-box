@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { TransactionService } from 'src/app/services/transaction.service';
-import { Transaction } from 'src/app/share/model/transaction';
+import { Transaction } from 'src/app/shared/model/transaction';
 
 @Component({
   selector: 'app-transaction',

@@ -5,7 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { UsersService } from 'src/app/services/users.service';
-import { User } from 'src/app/share/model/user';
+import { User } from 'src/app/shared/model/user';
 import { UserDetailComponent } from '../user-detail/user-detail.component';
 
 @Component({

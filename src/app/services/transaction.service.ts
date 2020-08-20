@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
-import { Transaction } from '../share/model/transaction';
+import { Transaction } from '../shared/model/transaction';
 
 @Injectable({
   providedIn: 'root',

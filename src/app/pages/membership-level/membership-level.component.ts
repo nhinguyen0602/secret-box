@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MembershipLevelService } from 'src/app/services/membership-level.service';
 import { UsersService } from 'src/app/services/users.service';
-import { MembershipLevel } from 'src/app/share/model/membership-level';
-import { User } from 'src/app/share/model/user';
+import { MembershipLevel } from 'src/app/shared/model/membership-level';
+import { User } from 'src/app/shared/model/user';
 import { ConfirmUpdateMembershipComponent, MembershipDialogModel } from '../confirm-update-membership/confirm-update-membership.component';
 
 @Component({

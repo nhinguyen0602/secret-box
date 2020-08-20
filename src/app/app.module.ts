@@ -25,7 +25,7 @@ import { MembershipLevelComponent } from './pages/membership-level/membership-le
 import { TransactionComponent } from './pages/transaction/transaction.component';
 import { UserDetailComponent } from './pages/user-detail/user-detail.component';
 import { UsersComponent } from './pages/users/users.component';
-import { SharedModule } from './share/shared.module';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,

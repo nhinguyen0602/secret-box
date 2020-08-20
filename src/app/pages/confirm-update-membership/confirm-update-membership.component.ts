@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { UsersService } from 'src/app/services/users.service';
-import { User } from 'src/app/share/model/user';
+import { User } from 'src/app/shared/model/user';
 
 @Component({
   selector: 'app-confirm-update-membership',
