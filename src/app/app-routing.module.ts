@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './page/login/login.component';
-import { TransactionComponent } from './page/transaction/transaction.component';
-import { UsersComponent } from './page/users/users.component';
+import { LoginComponent } from './pages/login/login.component';
+import { TransactionComponent } from './pages/transaction/transaction.component';
+import { UsersComponent } from './pages/users/users.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/users' },
