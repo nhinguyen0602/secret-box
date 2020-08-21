@@ -26,6 +26,9 @@ export class ConfirmUpdateMembershipComponent implements OnInit {
 
   public onConfirm(): void {
     this.userService.updateMembershipLevel(this.user.id, this.idMember).subscribe();
+    this.dialogRef.afterClosed().subscribe(() =>
+      this.userService.changeUsers.next(),
+    );
     this.dialogRef.close(true);
   }
 
