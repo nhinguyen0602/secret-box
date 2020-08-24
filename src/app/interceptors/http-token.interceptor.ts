@@ -1,24 +1,28 @@
 import {Injectable, Injector} from '@angular/core';
+// tslint:disable-next-line:ordered-imports
 import {
   HttpEvent,
+  // tslint:disable-next-line:ordered-imports
   HttpInterceptor,
   HttpHandler,
+  // tslint:disable-next-line:trailing-comma
   HttpRequest
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AuthService } from '../service/auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Injectable()
 export class HttpTokenInterceptor implements HttpInterceptor {
   constructor(private auth: AuthService) {
   }
 
-  intercept(
+  public intercept(
     req: HttpRequest<any>,
+    // tslint:disable-next-line:trailing-comma
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const headersConfig = {
-      Accept: 'application/json'
+      Accept: 'application/json',
     };
     if (!req.headers.has('X-Skip-ContentType-Intercetor')) {
      headersConfig['Content-Type'] = 'application/json';
@@ -39,11 +43,11 @@ export class HttpTokenInterceptor implements HttpInterceptor {
     return next.handle(request);
   }
 
-  inWhiteList(req: HttpRequest<any>): boolean {
+  private inWhiteList(req: HttpRequest<any>): boolean {
     const url = req.url;
     const whiteList = ['login', 'assets'];
 
-    whiteList.forEach(allowURI => {
+    whiteList.forEach((allowURI) => {
       if (url.indexOf(allowURI) > -1) {
         return true;
       }

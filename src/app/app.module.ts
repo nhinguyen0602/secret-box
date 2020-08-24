@@ -1,25 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
+import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import {LoadingBarHttpClientModule} from '@ngx-loading-bar/http-client';
+import { ChartsModule } from 'ng2-charts';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './page/login/login.component';
-import { SharedModule } from './share/shared.module';
-import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { ButtonComponent } from './components/button/button.component';
+import { ChartComponent } from './components/chart/chart.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HttpErrorInterceptor } from './interceptors/error-handler.interceptor';
-import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
-import { UsersComponent } from './page/users/users.component';
 import { HttpTokenInterceptor } from './interceptors/http-token.interceptor';
-import { UserDetailComponent } from './page/user-detail/user-detail.component';
-import { ChartsModule } from 'ng2-charts';
-import { MembershipLevelComponent } from './page/membership-level/membership-level.component';
-import { ChartComponent } from './component/chart/chart.component';
-import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
-import { SidenavComponent } from './component/sidenav/sidenav.component';
-import { FooterComponent } from './component/footer/footer.component';
-import { ButtonComponent } from './component/button/button.component';
-import { ConfirmUpdateMembershipComponent } from './page/confirm-update-membership/confirm-update-membership.component';
+import { ConfirmUpdateMembershipComponent } from './pages/confirm-update-membership/confirm-update-membership.component';
+import { LoginComponent } from './pages/login/login.component';
+import { MembershipLevelComponent } from './pages/membership-level/membership-level.component';
+import { TransactionComponent } from './pages/transaction/transaction.component';
+import { UserDetailComponent } from './pages/user-detail/user-detail.component';
+import { UsersComponent } from './pages/users/users.component';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +39,12 @@ import { ConfirmUpdateMembershipComponent } from './page/confirm-update-membersh
     FooterComponent,
     ButtonComponent,
     ConfirmUpdateMembershipComponent,
+    TransactionComponent,
+  ],
+  entryComponents: [
+    ConfirmUpdateMembershipComponent,
+    ConfirmDialogComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,14 +52,20 @@ import { ConfirmUpdateMembershipComponent } from './page/confirm-update-membersh
     SharedModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ChartsModule
+    ChartsModule,
+    LoadingBarHttpClientModule,
+    TabsModule.forRoot(),
+    Ng2SearchPipeModule,
+    FormsModule,
+    NgbPaginationModule,
     ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
-    JwtHelperService
+    JwtHelperService,
   ],
-  bootstrap: [AppComponent]
+  // tslint:disable-next-line:object-literal-sort-keys
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

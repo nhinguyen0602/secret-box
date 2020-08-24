@@ -1,0 +1,22 @@
+table {
+	width: 90%;
+	margin-left: 5%;
+}
+
+.pagination {
+	float: right;
+	margin-right: 50px;
+}
+
+.fa {
+	margin-left: 60px;
+}
+
+.fa-exchange {
+  font-size: 25px;
+}
+
+.title-class {
+	margin-top: 10px;
+	margin-left: 10px;
+}

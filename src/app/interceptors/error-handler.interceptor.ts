@@ -1,14 +1,15 @@
 import {
-  HttpEvent,
-  HttpInterceptor,
-  HttpHandler,
-  HttpRequest,
   HttpErrorResponse,
+  // tslint:disable-next-line:ordered-imports
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest,
 } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Injectable } from '@angular/core';
-import { CustomSnackbarService } from '../service/custom-snackbar.service';
+import { CustomSnackbarService } from '../services/custom-snackbar.service';
 
 @Injectable()
 export class HttpErrorInterceptor implements HttpInterceptor {
@@ -17,8 +18,9 @@ export class HttpErrorInterceptor implements HttpInterceptor {
   ) {
   }
 
-  intercept(
+  public intercept(
     request: HttpRequest<any>,
+    // tslint:disable-next-line:trailing-comma
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
@@ -37,6 +39,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
         }
         this.snackbarService.warning(errorMessage, status);
         return throwError(errorMessage);
+      // tslint:disable-next-line:trailing-comma
       })
     );
   }

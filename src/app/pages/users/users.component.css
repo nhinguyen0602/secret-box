@@ -1,0 +1,34 @@
+table {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.pagination {
+  float: right;
+  margin-right: 50px;
+}
+
+.fa {
+	margin-left: 60px;
+}
+
+.fa-user-circle {
+  font-size: 30px;
+}
+
+.title-class {
+  margin-top: 10px;
+}
+
+.form-control {
+  width: 60%;
+  float: right;
+  margin-right: 70px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 50%;
+  float: right;
+  margin-right: 30px;
+}

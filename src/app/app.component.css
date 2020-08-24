@@ -2,16 +2,24 @@
   margin-bottom: 10px;
   margin-right: 5px;
   font-size: 35px;
+  color: 	rgb(248, 108, 107);
+}
+
+.fill-remaining-space {
+  color: var(--primary-color);
 }
 
 .content {
   flex: 1; 
-  width: 100%;
-  float: right;
+  width: 97%;
+  margin-top: 10px;
+  margin-left: 15px;
 }
 
 .all-wrap {
   min-height: calc(100vh - 64px); 
+  height: 92%;
+  background-color: 	rgb(240, 243, 245);
 }
 
 .page-wrap {
@@ -25,10 +33,15 @@
 }
 
 app-footer {
-  padding: 20px 0;
   text-align: center;
 }
 
-mat-sidenav {
-  width: 260px;
+.mat-sidenav {
+  width: 200px;
+}
+
+.mat-toolbar {
+  height: 8%;
+  background-color: white;
+  border-style: ridge;
 }
