@@ -9,7 +9,7 @@ import {
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { CustomSnackbarService } from '../service/custom-snackbar.service';
+import { CustomSnackbarService } from '../services/custom-snackbar.service';
 
 @Injectable()
 export class HttpErrorInterceptor implements HttpInterceptor {
