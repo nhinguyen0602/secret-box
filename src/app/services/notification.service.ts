@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
-import { Notification } from '../share/model/notification';
+import { Notification } from '../shared/model/notification';
 
 @Injectable({
   providedIn: 'root',
