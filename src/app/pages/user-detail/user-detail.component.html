@@ -15,14 +15,16 @@
         <div class="column left">
           <h3 class="font-h3">ID </h3>
           <h3 class="font-h3">Email </h3>
-          <h3 class="font-h3">Role </h3>
           <h3 class="font-h3">Membership level</h3>
+          <h3 class="font-h3">Role </h3>
         </div>
         <div class="column right" >
           <h3 class="custom-info">{{user?.id}}</h3>
           <h3 class="custom-info">{{user?.email}}</h3>
-          <h3 class="custom-info">{{user?.role.name}}</h3>
           <h3 class="custom-info" *ngIf="user?.membership_level">{{user?.membership_level.member_type}}</h3>
+          <div *ngIf="user?.role">
+            <h3 class="custom-info">{{user?.role.name}}</h3>
+          </div>
         </div>
       </div>
     </tab>
