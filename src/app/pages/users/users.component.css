@@ -1,0 +1,51 @@
+table {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.pagination {
+  float: right;
+  margin-right: 50px;
+}
+
+.fa {
+	margin-left: 60px;
+}
+
+.fa-user-circle {
+  font-size: 30px;
+}
+
+.title-class {
+  margin-top: 10px;
+}
+
+.form-control {
+  width: 60%;
+  float: right;
+  margin-right: 70px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 90%;
+  margin-right: 30px;
+}
+
+.btn {
+  width: 20%;
+  float: right;
+  margin-right: 10%;
+}
+
+.btn-notification {
+  float: right;
+  margin-right: 10%;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.user-class {
+  cursor: grab;
+  color:rgb(9, 130, 173);
+}
