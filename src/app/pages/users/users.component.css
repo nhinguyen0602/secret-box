@@ -44,3 +44,8 @@ table {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
+
+.user-class {
+  cursor: grab;
+  color:rgb(9, 130, 173);
+}

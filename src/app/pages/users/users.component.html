@@ -24,7 +24,7 @@
       
           <ng-container matColumnDef="email">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
-            <mat-cell *matCellDef="let row" (click)="openDialogUserDetail(row.id)" style="cursor: grab;"> {{row.email}} </mat-cell>
+            <mat-cell *matCellDef="let row" (click)="openDialogUserDetail(row.id)" class="user-class"> {{row.email}} </mat-cell>
           </ng-container>
       
           <ng-container matColumnDef="membership">
