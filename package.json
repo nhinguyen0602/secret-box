@@ -43,7 +43,7 @@
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
     "core-js": "^2.6.11",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "faker": "^4.1.0",
     "flag-icon-css": "^3.4.6",
     "font-awesome": "^4.7.0",
